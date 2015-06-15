@@ -190,7 +190,11 @@ if ( !class_exists( 'cherry_charts_init' ) ) {
 		 * @param  array $handles CSS handles to compile
 		 */
 		function add_style_to_compiler( $handles ) {
-			$handles['cherry-charts'] = CHERRY_CHARTS_URI . 'assets/public/css/cherry-charts.css';
+			$handles = array_merge(
+				array( 'cherry-charts' => CHERRY_CHARTS_URI . 'assets/public/css/cherry-charts.css' ),
+				$handles
+			);
+
 			return $handles;
 		}
 
