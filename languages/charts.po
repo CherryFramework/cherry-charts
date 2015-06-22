@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: megamenu\n"
 "POT-Creation-Date: 2014-07-03 23:09-0000\n"
-"PO-Revision-Date: 2014-07-03 23:09-0000\n"
+"PO-Revision-Date: 2015-06-22 10:15+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: English\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.7.6\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
@@ -209,7 +209,8 @@ msgstr ""
 msgid "Duplicate Theme"
 msgstr ""
 
-#: ../classes/theme-editor.class.php:586 ../classes/theme-editor.class.php:603
+#: ../classes/theme-editor.class.php:586
+#: ../classes/theme-editor.class.php:603
 msgid "Normal"
 msgstr ""
 
