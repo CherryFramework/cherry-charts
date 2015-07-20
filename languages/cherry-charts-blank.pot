@@ -1,0 +1,613 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: blank\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-20 17:11+0300\n"
+"PO-Revision-Date: 2015-04-06 06:14+0300\n"
+"Last-Translator: Vladimir Anokhin <ano.vladimir@gmail.com>\n"
+"Language-Team: Cherry Team <support@cherryframework.com>\n"
+"Language: su\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__;__;_x;esc_html_e;esc_html__;esc_attr_e;"
+"esc_attr__;_x:1,2c;_n:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.8.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:68
+msgid "Define chart settings"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:75
+msgid "Set up content settings"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:82
+msgid "Set up chart data"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:89
+msgid "Set up chart style"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:96
+msgid "Shortcode to paste"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:179
+msgid "Chart type"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:180
+msgid "Select chart type"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:183
+msgid "Progress Bar"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:184
+msgid "Pie"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:185
+msgid "Doughnut"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:186
+msgid "Bar"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:193
+msgid "Progress bar type"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:194
+msgid "Select progress bar type"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:197
+msgid "Radial"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:198
+msgid "Horizontal"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:199
+msgid "Vertical"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:207
+msgid "Inner cutout percentage"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:208
+msgid "Set inner cutout percentage (0 - for pie, > 0 for doughnut)"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:219
+msgid "Width"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:220
+msgid "Chart width (for bar chart & non-radial progress bars)"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:230
+msgid "Height"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:231
+msgid "Chart height (for bar chart & non-radial progress bars)"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:278
+msgid "Progress bar template"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:279
+msgid ""
+"Select progress bar template (this option allowed only for progress bars)"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:287
+msgid "Chart Icon"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:288
+msgid "Select chart icon"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:296
+msgid "Chart Icon size"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:297
+msgid "Set chart icon size"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:307
+msgid "Chart icon color"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:315
+msgid "Show chart title"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:324
+msgid "Show chart label"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:333
+msgid "Show chart legend"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:427
+msgid "Item #1 color"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:434
+msgid "Item #2 color"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:441
+msgid "Item #3 color"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:448
+msgid "Item #4 color"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:455
+msgid "Item #5 color"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:462
+msgid "Item #6 color"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:469
+msgid "Item #7 color"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:476
+msgid "Item #8 color"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:483
+msgid "Item #9 color"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:490
+msgid "Item #10 color"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:511
+msgid "Background color"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:518
+msgid "Items opacity"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:519
+msgid "Set items opacity (0 - transparent, 100 - opaque)"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:528
+msgid "Background opacity"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:529
+msgid "Set Background opacity (0 - transparent, 100 - opaque)"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:538
+msgid "Chart stroke thickness"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:539
+msgid "Set chart stroke thickness (0 - without stroke)"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:548
+msgid "Chart stroke color"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:555
+msgid "Chart stroke opacity"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:556
+msgid "Set Chart stroke opacity (0 - transparent, 100 - opaque)"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:104
+#: includes/admin/class-cherry-interface-builder.php:545
+#: includes/admin/class-cherry-interface-builder.php:695
+msgid "Choose Image"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:105
+msgid "Remove Image"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:115
+msgid "On"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:116
+msgid "Off"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:319
+#: includes/admin/class-cherry-interface-builder.php:345
+#: includes/admin/class-cherry-interface-builder.php:352
+#: includes/admin/class-cherry-interface-builder.php:601
+#: includes/admin/class-cherry-interface-builder.php:774
+#: includes/admin/class-cherry-interface-builder.php:781
+#: includes/admin/class-cherry-interface-builder.php:856
+msgid "Step Up"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:319
+#: includes/admin/class-cherry-interface-builder.php:345
+#: includes/admin/class-cherry-interface-builder.php:352
+#: includes/admin/class-cherry-interface-builder.php:601
+#: includes/admin/class-cherry-interface-builder.php:774
+#: includes/admin/class-cherry-interface-builder.php:781
+#: includes/admin/class-cherry-interface-builder.php:856
+msgid "Step Down"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:382
+msgid "Column class(.col-xs-*)"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:392
+msgid "Column class(.col-sm-*)"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:402
+msgid "Column class(.col-md-*)"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:412
+msgid "Column class(.col-lg-*)"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:422
+msgid "Custom class"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:436
+msgid "Create new static"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:437
+msgid "Add new static"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:558
+#: includes/admin/class-cherry-interface-builder.php:723
+msgid "Current Image"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:648
+msgid "No repeat"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:649
+msgid "Repeat All"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:650
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:651
+msgid "Repeat Vertically"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:654
+msgid "Top Left"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:655
+msgid "Top Center"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:656
+msgid "Top Right"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:657
+msgid "Middle Left"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:658
+msgid "Middle Center"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:659
+msgid "Middle Right"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:660
+msgid "Bottom Left"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:661
+msgid "Bottom Center"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:662
+msgid "Bottom Right"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:665
+msgid "Scroll Normally"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:666
+msgid "Fixed in Place"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:669
+#: includes/admin/class-cherry-interface-builder.php:679
+msgid "Padding box"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:670
+#: includes/admin/class-cherry-interface-builder.php:680
+msgid "Border box"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:671
+#: includes/admin/class-cherry-interface-builder.php:681
+msgid "Content box"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:674
+msgid "Auto Auto"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:675
+msgid "Cover"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:676
+msgid "Contain"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:686
+msgid "Background Color"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:689
+msgid "Background Image"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:700
+msgid "Background Settings"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:704
+#, php-format
+msgid "Background %s"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:760
+msgid "Not defined"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:761
+msgid "Inherit"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:762
+msgid "Left"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:763
+msgid "Right"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:764
+msgid "Center"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:765
+msgid "Justify"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:772
+msgid "Font Size"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:779
+msgid "Lineheight"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:789
+msgid "Font Family"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:821
+msgid "Font Style"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:832
+msgid "Character Sets"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:845
+msgid "Text align"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:854
+msgid "Letter-spacing"
+msgstr ""
+
+#: includes/admin/class-cherry-interface-builder.php:860
+msgid "Font color"
+msgstr ""
+
+#: includes/class-charts-shortcode.php:71
+msgid "Title"
+msgstr ""
+
+#: includes/class-charts-shortcode.php:77
+msgid "Label"
+msgstr ""
+
+#: includes/class-charts-shortcode.php:83
+msgid "Icon"
+msgstr ""
+
+#: includes/class-charts-shortcode.php:89
+msgid "Pie icon styles"
+msgstr ""
+
+#: includes/class-charts-shortcode.php:90
+msgid "Apply this only as style attribute value"
+msgstr ""
+
+#: includes/class-charts-shortcode.php:96
+msgid "Progress bar (or pie)"
+msgstr ""
+
+#: includes/class-charts-shortcode.php:102
+msgid "Progress value"
+msgstr ""
+
+#: includes/class-charts-shortcode.php:108
+#: includes/class-cherry-charts-init.php:123
+msgid "Total"
+msgstr ""
+
+#: includes/class-charts-shortcode.php:114
+msgid "Progress percent"
+msgstr ""
+
+#: includes/class-charts-shortcode.php:133
+#: includes/class-cherry-charts-init.php:48
+#: includes/class-cherry-charts-init.php:50
+#: includes/class-cherry-charts-init.php:51
+msgid "Charts"
+msgstr ""
+
+#: includes/class-charts-shortcode.php:140
+msgid "Chart ID"
+msgstr ""
+
+#: includes/class-charts-shortcode.php:141
+msgid "Enter Chart ID to show"
+msgstr ""
+
+#: includes/class-charts-shortcode.php:145
+msgid "Class"
+msgstr ""
+
+#: includes/class-charts-shortcode.php:146
+msgid "Extra CSS class"
+msgstr ""
+
+#: includes/class-charts-shortcode.php:178
+msgid "Please, provide correct Chart ID"
+msgstr ""
+
+#: includes/class-charts-shortcode.php:190
+msgid "Chart not exists"
+msgstr ""
+
+#: includes/class-charts-shortcode.php:245
+msgid "Chart data are empty"
+msgstr ""
+
+#: includes/class-charts-shortcode.php:392
+msgid "Template file not exists"
+msgstr ""
+
+#: includes/class-charts-shortcode.php:457
+#: includes/class-charts-shortcode.php:550
+msgid "No data to show"
+msgstr ""
+
+#: includes/class-cherry-charts-init.php:49
+msgid "Chart"
+msgstr ""
+
+#: includes/class-cherry-charts-init.php:52
+#: includes/class-cherry-charts-init.php:53
+msgid "Add New Chart"
+msgstr ""
+
+#: includes/class-cherry-charts-init.php:54
+msgid "New Chart"
+msgstr ""
+
+#: includes/class-cherry-charts-init.php:55
+msgid "Edit Chart"
+msgstr ""
+
+#: includes/class-cherry-charts-init.php:56
+msgid "View Chart"
+msgstr ""
+
+#: includes/class-cherry-charts-init.php:57
+msgid "All Charts"
+msgstr ""
+
+#: includes/class-cherry-charts-init.php:58
+msgid "Search Charts"
+msgstr ""
+
+#: includes/class-cherry-charts-init.php:59
+msgid "Parent Charts:"
+msgstr ""
+
+#: includes/class-cherry-charts-init.php:60
+msgid "No Charts found."
+msgstr ""
+
+#: includes/class-cherry-charts-init.php:61
+msgid "No Charts found in Trash."
+msgstr ""
+
+#: includes/class-cherry-charts-init.php:123
+msgid "Done"
+msgstr ""
+
+#: includes/class-cherry-charts-init.php:124
+msgid "Value"
+msgstr ""
+
+#: includes/lib/EDD_SL_Plugin_Updater.php:155
+#, php-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class="
+"\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
+msgstr ""
+
+#: includes/lib/EDD_SL_Plugin_Updater.php:162
+#, php-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class="
+"\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s"
+"\">update now</a>."
+msgstr ""
+
+#: includes/lib/EDD_SL_Plugin_Updater.php:302
+msgid "You do not have permission to install plugin updates"
+msgstr ""
+
+#: includes/lib/EDD_SL_Plugin_Updater.php:302
+msgid "Error"
+msgstr ""
