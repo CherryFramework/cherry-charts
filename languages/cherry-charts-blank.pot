@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blank\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-20 17:11+0300\n"
+"POT-Creation-Date: 2015-07-30 17:33+0300\n"
 "PO-Revision-Date: 2015-04-06 06:14+0300\n"
 "Last-Translator: Vladimir Anokhin <ano.vladimir@gmail.com>\n"
 "Language-Team: Cherry Team <support@cherryframework.com>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "esc_attr__;_x:1,2c;_n:1,2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.2\n"
+"X-Generator: Poedit 1.8.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -432,7 +432,7 @@ msgid "Font Size"
 msgstr ""
 
 #: includes/admin/class-cherry-interface-builder.php:779
-msgid "Lineheight"
+msgid "Line height"
 msgstr ""
 
 #: includes/admin/class-cherry-interface-builder.php:789
@@ -524,15 +524,15 @@ msgid "Please, provide correct Chart ID"
 msgstr ""
 
 #: includes/class-charts-shortcode.php:190
-msgid "Chart not exists"
+msgid "Chart does not exist"
 msgstr ""
 
 #: includes/class-charts-shortcode.php:245
-msgid "Chart data are empty"
+msgid "Chart data is empty"
 msgstr ""
 
 #: includes/class-charts-shortcode.php:392
-msgid "Template file not exists"
+msgid "Template file does not exist"
 msgstr ""
 
 #: includes/class-charts-shortcode.php:457
