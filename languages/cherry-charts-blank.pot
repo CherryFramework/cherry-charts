@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blank\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-30 17:33+0300\n"
+"POT-Creation-Date: 2015-07-31 11:56+0300\n"
 "PO-Revision-Date: 2015-04-06 06:14+0300\n"
 "Last-Translator: Vladimir Anokhin <ano.vladimir@gmail.com>\n"
 "Language-Team: Cherry Team <support@cherryframework.com>\n"
@@ -587,27 +587,4 @@ msgstr ""
 
 #: includes/class-cherry-charts-init.php:124
 msgid "Value"
-msgstr ""
-
-#: includes/lib/EDD_SL_Plugin_Updater.php:155
-#, php-format
-msgid ""
-"There is a new version of %1$s available. <a target=\"_blank\" class="
-"\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
-msgstr ""
-
-#: includes/lib/EDD_SL_Plugin_Updater.php:162
-#, php-format
-msgid ""
-"There is a new version of %1$s available. <a target=\"_blank\" class="
-"\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s"
-"\">update now</a>."
-msgstr ""
-
-#: includes/lib/EDD_SL_Plugin_Updater.php:302
-msgid "You do not have permission to install plugin updates"
-msgstr ""
-
-#: includes/lib/EDD_SL_Plugin_Updater.php:302
-msgid "Error"
 msgstr ""
