@@ -40,7 +40,6 @@ if ( ! class_exists( 'cherry_charts' ) ) {
 			// Include necessary files
 			add_action( 'plugins_loaded', array( $this, 'includes' ), 5 );
 			add_action( 'plugins_loaded', array( $this, 'admin' ), 1 );
-			add_action( 'plugins_loaded', array( $this, 'updater' ), 10 );
 		}
 
 		/**
@@ -98,10 +97,6 @@ if ( ! class_exists( 'cherry_charts' ) ) {
 			require_once( 'includes/cherry-charts-functions.php' );
 			require_once( 'includes/class-cherry-charts-init.php' );
 			require_once( 'includes/class-charts-shortcode.php' );
-			// include updater class if not included
-			if( !class_exists( 'EDD_SL_Plugin_Updater' ) ) {
-				require_once( 'includes/lib/EDD_SL_Plugin_Updater.php' );
-			}
 		}
 
 		function admin() {
@@ -115,31 +110,6 @@ if ( ! class_exists( 'cherry_charts' ) ) {
 						'repository_name'	=> CHERRY_CHARTS_SLUG
 				));
 			}
-		}
-
-		/**
-		 * Init updater script
-		 *
-		 * @since  1.0.0
-		 */
-		function updater() {
-
-			// retrieve our license key from the DB
-			$license_key = get_option( 'cherry_keys' );
-			$license_key = isset( $license_key['cherry-charts'] ) ? $license_key['cherry-charts'] : '';
-
-			// setup the updater
-			$edd_updater = new EDD_SL_Plugin_Updater(
-				'https://cloud.cherryframework.com',
-				__FILE__,
-				array(
-					'version'   => CHERRY_CHARTS_VERSION,
-					'license'   => $license_key,
-					'item_name' => 'Cherry Charts',
-					'author'    => 'Cherry Team',
-					'url'       => home_url()
-				)
-			);
 		}
 
 	}

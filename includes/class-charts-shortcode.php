@@ -187,7 +187,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			$chart = get_post( $id );
 
 			if ( !$chart ) {
-				return '<div class="error">' . __( 'Chart not exists', 'cherry-charts' ) . '</div>';
+				return '<div class="error">' . __( 'Chart does not exist', 'cherry-charts' ) . '</div>';
 			}
 
 			$type = cherry_charts_get_meta( $id, 'type', 'progress_bar' );
@@ -242,7 +242,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			$bg_color = cherry_charts_maybe_to_rgba( $bg_color, $bg_opacity );
 
 			if ( empty( $data ) ) {
-				return '<div class="error">' . __( 'Chart data are empty', 'cherry-charts' ) . '</div>';
+				return '<div class="error">' . __( 'Chart data is empty', 'cherry-charts' ) . '</div>';
 			}
 
 			$icon_style  = array();
@@ -389,7 +389,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			$tpl_file = $this->get_template_path( $template, 'charts' );
 
 			if ( ! $tpl_file ) {
-				return '<div class="error">' . __( 'Template file not exists', 'cherry-charts' ) . '</div>';
+				return '<div class="error">' . __( 'Template file does not exist', 'cherry-charts' ) . '</div>';
 			}
 
 			ob_start();
