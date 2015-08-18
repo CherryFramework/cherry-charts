@@ -78,7 +78,7 @@ if ( !class_exists( 'cherry_charts_init' ) ) {
 				'supports'             => array( 'title', 'author' )
 			);
 
-			register_post_type( 'chart', $args );
+			register_post_type( 'chart', apply_filters( 'cherry_chart_post_type_args', $args ) );
 
 		}
 
