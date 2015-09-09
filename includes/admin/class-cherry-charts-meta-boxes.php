@@ -311,29 +311,38 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 				),
 				'show_title' => array(
 					'id'            => 'show_title',
-					'type'          => 'checkbox',
+					'type'          => 'switcher',
 					'label'         => __( 'Show chart title', 'cherry-charts' ),
 					'description'   => '',
-					'value'         => 'yes',
-					'default_value' => 'yes',
+					'value'         => 'true',
+					'toggle'        => array(
+						'true_toggle'  => __( 'Yes', 'cherry-charts' ),
+						'false_toggle' => __( 'No', 'cherry-charts' )
+					),
 					'chart_group' => 'doughnut-group pie-group bar-group depend-group'
 				),
 				'show_labels' => array(
 					'id'            => 'show_labels',
-					'type'          => 'checkbox',
+					'type'          => 'switcher',
 					'label'         => __( 'Show chart label', 'cherry-charts' ),
 					'description'   => '',
-					'value'         => 'yes',
-					'default_value' => 'yes',
+					'value'         => 'true',
+					'toggle'        => array(
+						'true_toggle'  => __( 'Yes', 'cherry-charts' ),
+						'false_toggle' => __( 'No', 'cherry-charts' )
+					),
 					'chart_group'   => 'doughnut-group pie-group bar-group depend-group'
 				),
 				'show_legend' => array(
 					'id'            => 'show_legend',
-					'type'          => 'checkbox',
+					'type'          => 'switcher',
 					'label'         => __( 'Show chart legend', 'cherry-charts' ),
 					'description'   => '',
-					'value'         => 'yes',
-					'default_value' => 'yes',
+					'value'         => 'true',
+					'toggle'        => array(
+						'true_toggle'  => __( 'Yes', 'cherry-charts' ),
+						'false_toggle' => __( 'No', 'cherry-charts' )
+					),
 					'chart_group'   => 'doughnut-group pie-group bar-group depend-group'
 				)
 			);

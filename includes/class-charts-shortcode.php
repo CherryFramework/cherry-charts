@@ -451,6 +451,17 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			$show_labels = cherry_charts_get_meta( $id, 'show_labels', 'yes' );
 			$show_legend = cherry_charts_get_meta( $id, 'show_legend', 'yes' );
 
+			// fix labels triggers
+			if ( 'true' == $show_title ) {
+				$show_title = 'yes';
+			}
+			if ( 'true' == $show_labels ) {
+				$show_labels = 'yes';
+			}
+			if ( 'true' == $show_legend ) {
+				$show_legend = 'yes';
+			}
+
 			$bg_color = cherry_charts_maybe_to_rgba( $bg_color, $bg_opacity );
 
 			if ( empty( $data ) ) {
