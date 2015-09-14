@@ -4,7 +4,7 @@
  * Plugin Name: Cherry Charts
  * Plugin URI:  http://www.cherryframework.com/
  * Description: Charts plugin.
- * Version:     1.0.3
+ * Version:     1.0.4
  * Author:      Cherry Team
  * Author URI:  http://www.cherryframework.com/
  * Text Domain: cherry-charts
@@ -27,7 +27,7 @@ if ( ! class_exists( 'cherry_charts' ) ) {
 		 * @var   string
 		 * @since 1.0.0
 		 */
-		public $version = '1.0.3';
+		public $version = '1.0.4';
 
 		/**
 		 * Constructor
