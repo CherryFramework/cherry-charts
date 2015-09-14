@@ -180,6 +180,10 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 
 			$cached = cherry_charts_get_cache( $id );
 
+			// enqueue charts JS
+			wp_enqueue_script( 'charts' );
+			wp_enqueue_script( 'charts-public' );
+
 			if ( $cached ) {
 				return $cached;
 			}

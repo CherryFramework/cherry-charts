@@ -167,13 +167,13 @@ if ( !class_exists( 'cherry_charts_init' ) ) {
 		 */
 		function public_assets() {
 			// Scripts
-			wp_enqueue_script(
+			wp_register_script(
 				'charts',
-				CHERRY_CHARTS_URI . 'assets/public/js/chart.min.js', array( 'jquery' ), CHERRY_CHARTS_VERSION, true
+				CHERRY_CHARTS_URI . 'assets/public/js/min/chart.min.js', array( 'jquery' ), CHERRY_CHARTS_VERSION, true
 			);
-			wp_enqueue_script(
+			wp_register_script(
 				'charts-public',
-				CHERRY_CHARTS_URI . 'assets/public/js/script.js', array( 'jquery' ), CHERRY_CHARTS_VERSION, true
+				CHERRY_CHARTS_URI . 'assets/public/js/min/script.min.js', array( 'jquery' ), CHERRY_CHARTS_VERSION, true
 			);
 			// Styles
 			wp_enqueue_style(
