@@ -62,7 +62,7 @@
 			var ctxPie = $('canvas', this).get(0).getContext("2d");
 			var chartPie = new Chart(ctxPie).Pie(pieData, optionPie);
 
-			if ( true == showLegend ) {
+			if ( 'yes' == showLegend ) {
 				var legend = chartPie.generateLegend();
 				$(this).append(legend);
 			}
@@ -93,7 +93,7 @@
 			var ctxDoughnut = $('canvas', this).get(0).getContext("2d");
 			var chartDoughnut = new Chart(ctxDoughnut).Doughnut(doughnutData, optionDoughnut);
 
-			if ( true == showLegend ) {
+			if ( 'yes' == showLegend ) {
 				var legend = chartDoughnut.generateLegend();
 				$(this).append(legend);
 			}

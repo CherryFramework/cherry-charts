@@ -555,9 +555,20 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			$bg_color    = cherry_charts_get_meta( $id, 'bg_color', false );
 			$bg_opacity  = cherry_charts_get_meta( $id, 'bg_opacity', 100 );
 			$border      = cherry_charts_get_meta( $id, 'canvas_stroke', 0 );
-			$show_title  = cherry_charts_get_meta( $id, 'show_title', true );
-			$show_labels = cherry_charts_get_meta( $id, 'show_labels', true );
-			$show_legend = cherry_charts_get_meta( $id, 'show_legend', true );
+			$show_title  = cherry_charts_get_meta( $id, 'show_title', 'yes' );
+			$show_labels = cherry_charts_get_meta( $id, 'show_labels', 'yes' );
+			$show_legend = cherry_charts_get_meta( $id, 'show_legend', 'yes' );
+
+			// fix labels triggers
+			if ( 'true' == $show_title ) {
+				$show_title = 'yes';
+			}
+			if ( 'true' == $show_labels ) {
+				$show_labels = 'yes';
+			}
+			if ( 'true' == $show_legend ) {
+				$show_legend = 'yes';
+			}
 
 			$bg_color = cherry_charts_maybe_to_rgba( $bg_color, $bg_opacity );
 
@@ -603,7 +614,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 
 			$data_atts = cherry_charts_parse_atts( $data_atts );
 
-			$title = ( true == $show_title ) ? '<h3>' . get_the_title( $id ) . '</h3>' : '';
+			$title = ( 'yes' === $show_title ) ? '<h3>' . get_the_title( $id ) . '</h3>' : '';
 
 			$pie_format = sprintf(
 				'%5$s<div class="cherry-charts-%4$s" %1$s><canvas width="%2$d" height="%3$d"/></div>',
