@@ -1,6 +1,13 @@
 # Cherry Charts
 A charts management plugin for WordPress.
-__Сompatibility: *Cherry Framework v.4+*__
+Сompatibility: Cherry Framework v.4+
+
+##Change log##
+
+#### v1.0.4 ####
+
+* FIX: Control show title handling
+* UPD: Enqueue charts JS files only if shortcode chart used
 
 ## Help
 Found a bug? Feature requests? [Create an issue - Thanks!](https://github.com/CherryFramework/cherry-charts/issues/new)
