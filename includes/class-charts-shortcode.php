@@ -185,7 +185,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			wp_enqueue_script( 'charts-public' );
 
 			if ( $cached ) {
-				//return $cached;
+				return $cached;
 			}
 
 			$chart = get_post( $id );
