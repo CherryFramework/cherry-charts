@@ -31,7 +31,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 		/**
 		 * Chart types
 		 */
-		private $chart_types = array( 'progress_bar', 'pie', 'doughnut', 'bar' );
+		private $chart_types = array( 'progress_bar', 'multi_progress', 'pie', 'doughnut', 'bar' );
 
 		/**
 		 * chart meta boxes
@@ -180,10 +180,11 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'description' => __( 'Select chart type', 'cherry-charts' ),
 					'value'       => 'progress_bar',
 					'options'     => array(
-						'progress_bar' => __( 'Progress Bar', 'cherry-charts' ),
-						'pie'          => __( 'Pie', 'cherry-charts' ),
-						'doughnut'     => __( 'Doughnut', 'cherry-charts' ),
-						'bar'          => __( 'Bar', 'cherry-charts' )
+						'progress_bar'   => __( 'Progress Bar', 'cherry-charts' ),
+						'multi_progress' => __( 'Multi Progress Bar', 'cherry-charts' ),
+						'pie'            => __( 'Pie', 'cherry-charts' ),
+						'doughnut'       => __( 'Doughnut', 'cherry-charts' ),
+						'bar'            => __( 'Bar', 'cherry-charts' )
 					)
 				),
 				'bar_type' => array(
@@ -279,7 +280,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'description' => __( 'Select progress bar template (this option allowed only for progress bars)', 'cherry-charts' ),
 					'value'       => 'radial',
 					'options'     => $templates,
-					'chart_group' => 'progress_bar-group depend-group'
+					'chart_group' => 'progress_bar-group multi_progress-group depend-group'
 				),
 				'chart_icon' => array(
 					'id'          => 'chart_icon',
@@ -287,7 +288,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'label'       => __( 'Chart Icon', 'cherry-charts' ),
 					'description' => __( 'Select chart icon', 'cherry-charts' ),
 					'value'       => '',
-					'chart_group' => 'progress_bar-group depend-group'
+					'chart_group' => 'progress_bar-group multi_progress-group depend-group'
 				),
 				'icon_size' => array(
 					'id'          => 'icon_size',
@@ -299,7 +300,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'max_value'   => 120,
 					'min_value'   => 12,
 					'value_step'  => 1,
-					'chart_group' => 'progress_bar-group depend-group'
+					'chart_group' => 'progress_bar-group multi_progress-group depend-group'
 				),
 				'icon_color' => array(
 					'id'          => 'icon_color',
@@ -307,7 +308,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'label'       => __( 'Chart icon color', 'cherry-charts' ),
 					'description' => '',
 					'value'       => '#bdc3c7',
-					'chart_group' => 'progress_bar-group depend-group'
+					'chart_group' => 'progress_bar-group multi_progress-group depend-group'
 				),
 				'show_title' => array(
 					'id'            => 'show_title',
@@ -389,6 +390,11 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 						break;
 
 					case 'pie':
+						$spare_rows = 1;
+						$spare_cols = 0;
+						break;
+
+					case 'multi_progress':
 						$spare_rows = 1;
 						$spare_cols = 0;
 						break;

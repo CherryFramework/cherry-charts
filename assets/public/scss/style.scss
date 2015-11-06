@@ -1,4 +1,5 @@
-.cherry-progress-bar {
+.cherry-progress-bar,
+.chart-multi_progress {
 	display: inline-block;
 	position: relative;
 	vertical-align: top;
@@ -42,6 +43,23 @@
 				width: 0;
 			}
 		}
+	}
+
+	.cherry-charts-multi-item {
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+	}
+
+	.cherry-charts-multi-val {
+		visibility: hidden;
+		i {
+			font-style: normal;
+		}
+	}
+	.cherry-charts-multi-label {
+		visibility: hidden;
 	}
 }
 
