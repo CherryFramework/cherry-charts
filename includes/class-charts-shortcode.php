@@ -185,7 +185,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			wp_enqueue_script( 'charts-public' );
 
 			if ( $cached ) {
-				return $cached;
+				//return $cached;
 			}
 
 			$chart = get_post( $id );
@@ -219,10 +219,11 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			$result .= '</div>';
 
 			$result = sprintf(
-				'<div class="cherry-chart chart-%1$s %2$s">%3$s</div>',
+				'<div class="cherry-chart chart-%1$s chart-id-%4$s %2$s">%3$s</div>',
 				esc_attr( $type ),
 				esc_attr( $custom_class ),
-				$content
+				$content,
+				$id
 			);
 
 			cherry_charts_set_cache( $id, $result );
@@ -283,7 +284,18 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 				'background-color' => $bg_color
 			);
 
-			$style_array = array_merge( $style_array, $this->get_progress_border( $id ) );
+			$border = cherry_charts_get_meta( $id, 'canvas_stroke', 0 );
+
+			if ( $border != 0 ) {
+
+				$border_color   = cherry_charts_get_meta( $id, 'canvas_stroke_color', '#bdc3c7' );
+				$border_opacity = cherry_charts_get_meta( $id, 'canvas_stroke_opacity', 100 );
+
+				$style_array['border-width'] = $border . 'px';
+				$style_array['border-style'] = 'solid';
+				$style_array['border-color'] = cherry_charts_maybe_to_rgba( $border_color, $border_opacity );
+
+			}
 
 			$style_att = cherry_charts_parse_css( $style_array );
 
@@ -357,7 +369,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			}
 
 			$meta = compact(
-				'bar_type', 'width', 'height', 'icon', 'data', 'color', 'opacity', 'bg_color', 'bg_opacity'
+				'bar_type', 'width', 'height', 'icon', 'data', 'color', 'opacity', 'bg_color', 'bg_opacity', 'border'
 			);
 
 			/**
@@ -456,33 +468,6 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			}
 
 			return $result;
-
-		}
-
-		/**
-		 * Get progress and multi progress style inline styles
-		 *
-		 * @since  1.1.0
-		 * @param  int $id chart ID.
-		 * @return void
-		 */
-		public function get_progress_border( $id ) {
-
-			$border      = cherry_charts_get_meta( $id, 'canvas_stroke', 0 );
-			$style_array = array();
-
-			if ( $border != 0 ) {
-
-				$border_color   = cherry_charts_get_meta( $id, 'canvas_stroke_color', '#bdc3c7' );
-				$border_opacity = cherry_charts_get_meta( $id, 'canvas_stroke_opacity', 100 );
-
-				$style_array['border-width'] = $border . 'px';
-				$style_array['border-style'] = 'solid';
-				$style_array['border-color'] = cherry_charts_maybe_to_rgba( $border_color, $border_opacity );
-
-			}
-
-			return $style_array;
 
 		}
 
