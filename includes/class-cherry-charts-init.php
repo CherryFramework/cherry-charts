@@ -138,10 +138,11 @@ if ( !class_exists( 'cherry_charts_init' ) ) {
 			);
 
 			$data = array(
-				'progress_bar' => $progress_data,
-				'pie'          => $pie_data,
-				'doughnut'     => $pie_data,
-				'bar'          => $bar_data,
+				'progress_bar'   => $progress_data,
+				'multi_progress' => $pie_data,
+				'pie'            => $pie_data,
+				'doughnut'       => $pie_data,
+				'bar'            => $bar_data,
 			);
 
 			wp_localize_script( 'cherry-charts', 'cherry_charts_default', $data );

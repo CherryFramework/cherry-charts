@@ -185,12 +185,12 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			wp_enqueue_script( 'charts-public' );
 
 			if ( $cached ) {
-				return $cached;
+				//return $cached;
 			}
 
 			$chart = get_post( $id );
 
-			if ( !$chart ) {
+			if ( ! $chart ) {
 				return '<div class="error">' . __( 'Chart does not exist', 'cherry-charts' ) . '</div>';
 			}
 
@@ -200,7 +200,11 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 
 			switch ( $type ) {
 				case 'progress_bar':
-					$content .= $this->chart_progress_bar( $id );
+					$content .= $this->chart_progress_bar( $id, false );
+					break;
+
+				case 'multi_progress':
+					$content .= $this->chart_progress_bar( $id, true );
 					break;
 
 				case 'bar':
@@ -214,7 +218,13 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 
 			$result .= '</div>';
 
-			$result = sprintf( '<div class="cherry-chart chart-%1$s %2$s">%3$s</div>', esc_attr( $type ), esc_attr( $custom_class ), $content );
+			$result = sprintf(
+				'<div class="cherry-chart chart-%1$s chart-id-%4$s %2$s">%3$s</div>',
+				esc_attr( $type ),
+				esc_attr( $custom_class ),
+				$content,
+				$id
+			);
 
 			cherry_charts_set_cache( $id, $result );
 
@@ -226,43 +236,46 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 		 *
 		 * @since  1.0.0
 		 *
-		 * @param  int    $id  Chart post ID
-		 * @return string      chart output
+		 * @param  int    $id       Chart post ID.
+		 * @param  bool   $is_multi is simple or muti progress bar.
+		 * @return string           chart output
 		 */
-		function chart_progress_bar( $id ) {
+		function chart_progress_bar( $id, $is_multi = false ) {
 
-			$bar_type   = cherry_charts_get_meta( $id, 'bar_type', 'radial' );
+			if ( true === $is_multi ) {
+				$data_type = 'data_multi_progress';
+				$bar_type  = 'horizontal';
+			} else {
+				$data_type = 'data_progress_bar';
+				$bar_type  = cherry_charts_get_meta( $id, 'bar_type', 'radial' );
+			}
+
 			$width      = cherry_charts_get_meta( $id, 'width', 200 );
 			$height     = cherry_charts_get_meta( $id, 'height', 200 );
-			$icon       = cherry_charts_get_meta( $id, 'chart_icon', '' );
-			$data       = cherry_charts_get_meta( $id, 'data_progress_bar', array() );
+			$data       = cherry_charts_get_meta( $id, $data_type, array() );
 			$color      = cherry_charts_get_meta( $id, 'item_color_1', false );
 			$opacity    = cherry_charts_get_meta( $id, 'items_opacity', 100 );
 			$bg_color   = cherry_charts_get_meta( $id, 'bg_color', false );
 			$bg_opacity = cherry_charts_get_meta( $id, 'bg_opacity', 100 );
-			$border     = cherry_charts_get_meta( $id, 'canvas_stroke', 0 );
-
-			$color    = cherry_charts_maybe_to_rgba( $color, $opacity );
-			$bg_color = cherry_charts_maybe_to_rgba( $bg_color, $bg_opacity );
+			$color      = cherry_charts_maybe_to_rgba( $color, $opacity );
+			$bg_color   = cherry_charts_maybe_to_rgba( $bg_color, $bg_opacity );
+			$icon_data  = $this->get_chart_icon( $id );
+			$icon       = $icon_data['icon'];
+			$icon_style = $icon_data['icon_style'];
 
 			if ( empty( $data ) ) {
 				return '<div class="error">' . __( 'Chart data is empty', 'cherry-charts' ) . '</div>';
 			}
 
-			$icon_style  = array();
-			$icon_size   = cherry_charts_get_meta( $id, 'icon_size' );
-			$icon_color  = cherry_charts_get_meta( $id, 'icon_color' );
-			$icon_format = apply_filters( 'cherry_charts_icon_format', '<span class="flaticon-%1$s"></span>' );
+			if ( ! $is_multi ) {
 
-			if ( $icon ) {
-				$icon = sprintf( $icon_format, $icon, $icon_style );
+				$label    = isset( $data[1][0] ) ? $data[1][0] : '';
+				$progress = isset( $data[1][1] ) ? $data[1][1] : 80;
+				$total    = isset( $data[1][2] ) ? $data[1][2] : 100;
+				$percent  = round( ( $progress * 100 / $total ), 0 );
+				$left     = ( $total - $progress < 0 ) ? $progress : $total - $progress;
+
 			}
-
-			$label    = isset( $data[1][0] ) ? $data[1][0] : '';
-			$progress = isset( $data[1][1] ) ? $data[1][1] : 80;
-			$total    = isset( $data[1][2] ) ? $data[1][2] : 100;
-			$percent  = round( ($progress*100/$total), 0 );
-			$left     = ( $total - $progress < 0 ) ? $progress : $total - $progress;
 
 			// default bar area styles  ( the same for horizontal and vertical bars, for radial - rewrited below )
 			$style_array = array(
@@ -270,6 +283,8 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 				'height'           => $height . 'px',
 				'background-color' => $bg_color
 			);
+
+			$border = cherry_charts_get_meta( $id, 'canvas_stroke', 0 );
 
 			if ( $border != 0 ) {
 
@@ -279,6 +294,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 				$style_array['border-width'] = $border . 'px';
 				$style_array['border-style'] = 'solid';
 				$style_array['border-color'] = cherry_charts_maybe_to_rgba( $border_color, $border_opacity );
+
 			}
 
 			$style_att = cherry_charts_parse_css( $style_array );
@@ -331,11 +347,25 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 
 					$bar_style_att = cherry_charts_parse_css( $bar_style_array );
 
-					$bar_format = sprintf(
-						'<span class="cherry-charts-bar %5$s" data-animate="yes" data-percent="%1$d" data-value="%2$d" style="%3$s"><span class="cherry-charts-progress" style="%4$s"></span></span>',
-						$percent, $progress, $style_att, $bar_style_att, $bar_type
-					);
+					if ( ! $is_multi ) {
+						$bar_format = sprintf(
+							'<span class="cherry-charts-bar %5$s" data-animate="yes" data-percent="%1$d" data-value="%2$d" style="%3$s"><span class="cherry-charts-progress" style="%4$s"></span></span>',
+							$percent, $progress, $style_att, $bar_style_att, $bar_type
+						);
+					} else {
+						$multi_bars = $this->chart_multi_progress( $id, $data );
+						$bar_format = sprintf(
+							'<span class="cherry-charts-bar multi-bar" data-animate="yes" style="%1$s">%2$s</span>',
+							$style_att, $multi_bars
+						);
+					}
+
 					break;
+			}
+
+			// if is multi progress - we done
+			if ( $is_multi ) {
+				return $bar_format;
 			}
 
 			$meta = compact(
@@ -347,23 +377,11 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			 *
 			 * @since 1.0.0
 			 *
-			 * @param string $bar_format default
-			 * @param int    $id         chart ID
-			 * @param string $bar_type   current progress bar type
+			 * @param string $bar_format default.
+			 * @param int    $id         chart ID.
+			 * @param string $bar_type   current progress bar type.
 			 */
 			$bar_format = apply_filters( 'cherry_charts_progress_bar_format', $bar_format, $id, $meta );
-
-			$icon_style['font-size']   = !empty($icon_size) ? $icon_size . 'px' : false;
-			$icon_style['line-height'] = $height . 'px';
-			$icon_style['color']       = !empty($icon_color) ? $icon_color : false;
-			$icon_style['position']    = 'absolute';
-			$icon_style['top']         = '0px';
-			$icon_style['left']        = '0px';
-			$icon_style['bottom']      = '0px';
-			$icon_style['right']       = '0px';
-			$icon_style['text-align']  = 'center';
-
-			$icon_style = cherry_charts_parse_css($icon_style);
 
 			$chart_data = array(
 				'id'       => $id,
@@ -406,6 +424,90 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			$this->chart_data = array();
 
 			return $content;
+		}
+
+		/**
+		 * Get mnulti progress output
+		 *
+		 * @since  1.1.0
+		 * @param  int   $id   chart ID.
+		 * @param  array $data data values array.
+		 * @return string
+		 */
+		public function chart_multi_progress( $id, $data ) {
+
+			$i = 1;
+			$item_format = '<span class="cherry-charts-multi-item" style="%3$s"><span class="cherry-charts-multi-label">%1$s</span><span class="cherry-charts-multi-val">%2$s<i>%%</i></span></span>';
+			$style_format = 'width:%1$s%%;background-color:%2$s;z-index:%3$s;';
+
+			$item_format = apply_filters( 'cherry_charts_multi_item_format', $item_format );
+			$result      = '';
+
+			foreach ( $data as $item ) {
+
+				if ( ! is_array( $item ) ) {
+					continue;
+				}
+
+				$label = esc_attr( $item[0] );
+				$value = intval( $item[1] );
+
+				if ( 100 < $value ) {
+					$value = 100;
+				}
+
+				$z_index = 101 - $value;
+				$opacity = cherry_charts_get_meta( $id, 'items_opacity', 100 );
+				$color   = cherry_charts_get_meta( $id, 'item_color_' . $i, '' );
+				$color   = cherry_charts_maybe_to_rgba( $color, $opacity );
+				$style   = sprintf( $style_format, $value, $color, $z_index );
+
+				$result .= sprintf( $item_format, $label, $value, $style );
+
+				$i++;
+			}
+
+			return $result;
+
+		}
+
+		/**
+		 * Get chart icon HTML and style
+		 *
+		 * @since  1.1.0
+		 * @param  int $id chart ID.
+		 * @return array
+		 */
+		public function get_chart_icon( $id ) {
+
+			$icon        = cherry_charts_get_meta( $id, 'chart_icon', '' );
+			$icon_style  = array();
+			$icon_size   = cherry_charts_get_meta( $id, 'icon_size' );
+			$icon_color  = cherry_charts_get_meta( $id, 'icon_color' );
+			$icon_format = apply_filters( 'cherry_charts_icon_format', '<span class="flaticon-%1$s"></span>' );
+			$height      = cherry_charts_get_meta( $id, 'height', 200 );
+
+			if ( $icon ) {
+				$icon = sprintf( $icon_format, $icon, $icon_style );
+			}
+
+			$icon_style['font-size']   = ! empty( $icon_size ) ? $icon_size . 'px' : false;
+			$icon_style['line-height'] = $height . 'px';
+			$icon_style['color']       = ! empty( $icon_color ) ? $icon_color : false;
+			$icon_style['position']    = 'absolute';
+			$icon_style['top']         = '0px';
+			$icon_style['left']        = '0px';
+			$icon_style['bottom']      = '0px';
+			$icon_style['right']       = '0px';
+			$icon_style['text-align']  = 'center';
+
+			$icon_style = cherry_charts_parse_css( $icon_style );
+
+			return array(
+				'icon'       => $icon,
+				'icon_style' => $icon_style,
+			);
+
 		}
 
 		/**
