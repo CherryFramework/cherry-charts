@@ -220,7 +220,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'label'       => __( 'Width', 'cherry-charts' ),
 					'description' => __( 'Chart width (for bar chart & non-radial progress bars)', 'cherry-charts' ),
 					'value'       => 200,
-					'max_value'   => 800,
+					'max_value'   => 1200,
 					'min_value'   => 2,
 					'value_step'  => 1
 				),

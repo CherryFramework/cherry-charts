@@ -158,10 +158,11 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 		 * Cherry charts shortcode output
 		 *
 		 * @since  1.0.0
+		 * @since  1.1.0  added multi progress bar.
 		 *
-		 * @param  array  $atts    shortcode atts
-		 * @param  string $content shortcode content
-		 * @return string          shortcode output
+		 * @param  array  $atts    shortcode atts.
+		 * @param  string $content shortcode content.
+		 * @return string          shortcode output.
 		 */
 		function charts_shortcode( $atts, $content = null ) {
 
