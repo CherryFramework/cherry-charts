@@ -280,7 +280,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'description' => __( 'Select progress bar template (this option allowed only for progress bars)', 'cherry-charts' ),
 					'value'       => 'radial',
 					'options'     => $templates,
-					'chart_group' => 'progress_bar-group multi_progress-group depend-group'
+					'chart_group' => 'progress_bar-group depend-group'
 				),
 				'chart_icon' => array(
 					'id'          => 'chart_icon',
@@ -288,7 +288,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'label'       => __( 'Chart Icon', 'cherry-charts' ),
 					'description' => __( 'Select chart icon', 'cherry-charts' ),
 					'value'       => '',
-					'chart_group' => 'progress_bar-group multi_progress-group depend-group'
+					'chart_group' => 'progress_bar-group depend-group'
 				),
 				'icon_size' => array(
 					'id'          => 'icon_size',
@@ -300,7 +300,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'max_value'   => 120,
 					'min_value'   => 12,
 					'value_step'  => 1,
-					'chart_group' => 'progress_bar-group multi_progress-group depend-group'
+					'chart_group' => 'progress_bar-group depend-group'
 				),
 				'icon_color' => array(
 					'id'          => 'icon_color',
@@ -308,7 +308,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'label'       => __( 'Chart icon color', 'cherry-charts' ),
 					'description' => '',
 					'value'       => '#bdc3c7',
-					'chart_group' => 'progress_bar-group multi_progress-group depend-group'
+					'chart_group' => 'progress_bar-group depend-group'
 				),
 				'show_title' => array(
 					'id'            => 'show_title',
@@ -320,7 +320,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 						'true_toggle'  => __( 'Yes', 'cherry-charts' ),
 						'false_toggle' => __( 'No', 'cherry-charts' )
 					),
-					'chart_group' => 'doughnut-group pie-group bar-group depend-group'
+					'chart_group' => 'multi_progress-group doughnut-group pie-group bar-group depend-group'
 				),
 				'show_labels' => array(
 					'id'            => 'show_labels',

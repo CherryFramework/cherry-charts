@@ -186,7 +186,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			wp_enqueue_script( 'charts-public' );
 
 			if ( $cached ) {
-				//return $cached;
+				return $cached;
 			}
 
 			$chart = get_post( $id );
@@ -278,7 +278,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 
 			}
 
-			// default bar area styles  ( the same for horizontal and vertical bars, for radial - rewrited below )
+			// Default bar area styles (the same for horizontal and vertical bars, for radial - rewrited below)
 			$style_array = array(
 				'width'            => $width . 'px',
 				'height'           => $height . 'px',
@@ -366,7 +366,21 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 
 			// if is multi progress - we done
 			if ( $is_multi ) {
-				return $bar_format;
+
+				$show_title = cherry_charts_get_meta( $id, 'show_title', 'true' );
+				$title      = '';
+
+				if ( 'true' == $show_title ) {
+					$title = get_the_title( $id );
+				}
+
+				return sprintf(
+					apply_filters(
+						'cherry_charts_multi_progress_format',
+						'<div class="cherry-multiprogress"><h3 class="cherry-multiprogress_title">%1$s</h3>%2$s</div>'
+					),
+					$title, $bar_format
+				);
 			}
 
 			$meta = compact(
