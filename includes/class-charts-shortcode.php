@@ -335,7 +335,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 					$style_att = cherry_charts_parse_css( $style_array );
 
 					$bar_format = sprintf(
-						'<div class="cherry-charts-bar radial" %1$s><canvas width="%2$d" height="%3$d" style="%4$s"/></div>',
+						'<div class="cherry-charts-bar radial" %1$s><canvas width="%2$d" height="%3$d" style="%4$s"></canvas></div>',
 						$data_atts, $width, $height, $style_att
 					);
 					break;
@@ -646,7 +646,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			$title = ( 'yes' == $show_title ) ? '<h3>' . get_the_title( $id ) . '</h3>' : '';
 
 			$pie_format = sprintf(
-				'%4$s<div class="cherry-charts-type-bar" %1$s><canvas width="%2$d" height="%3$d"/></div>',
+				'%4$s<div class="cherry-charts-type-bar" %1$s><canvas width="%2$d" height="%3$d"></canvas></div>',
 				$data_atts, $width, $height, $title
 			);
 
@@ -734,7 +734,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			$title = ( 'yes' === $show_title ) ? '<h3>' . get_the_title( $id ) . '</h3>' : '';
 
 			$pie_format = sprintf(
-				'%5$s<div class="cherry-charts-%4$s" %1$s><canvas width="%2$d" height="%3$d"/></div>',
+				'%5$s<div class="cherry-charts-%4$s" %1$s><canvas width="%2$d" height="%3$d"></canvas></div>',
 				$data_atts, $width, $height, $type, $title
 			);
 

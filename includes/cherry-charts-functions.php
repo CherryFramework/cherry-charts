@@ -62,7 +62,7 @@ function cherry_charts_parse_atts( $atts = array() ) {
 	$atts_str = '';
 
 	foreach ( $atts as $att_key => $att_value ) {
-		$atts_str .= 'data-' . $att_key . '="' . esc_attr( $att_value ) . '"';
+		$atts_str .= ' data-' . $att_key . '="' . esc_attr( $att_value ) . '"';
 	}
 
 	return $atts_str;
