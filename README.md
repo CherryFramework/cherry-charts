@@ -4,6 +4,12 @@ A charts management plugin for WordPress.
 
 ##Change log##
 
+#### v1.1.0 ####
+
+* ADD: multi progress bar
+* UPD: localization files
+* FIX: HTML-validation errors
+
 #### v1.0.4 ####
 
 * FIX: Control show title handling
