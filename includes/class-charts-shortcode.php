@@ -413,11 +413,11 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			/**
 			 * Filter progress bar template data
 			 *
-			 * @since  1.0.0
+			 * @since 1.0.0
 			 *
-			 * @param  array $chart_data default data
-			 * @param  int   $id         chart id
-			 * @var    array
+			 * @param array $chart_data default data
+			 * @param int   $id         chart id
+			 * @var   array
 			 */
 			$this->chart_data = apply_filters( 'cherry_charts_progress_bar_template_data', $chart_data, $id );
 
