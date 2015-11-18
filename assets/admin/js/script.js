@@ -29,7 +29,7 @@
 							readOnlyCell,
 							tableSettings;
 
-						if ( data.length === 0 ) {
+						if ( 0 === data.length ) {
 							data = cherryChartsDefault[type];
 						}
 
@@ -53,10 +53,10 @@
 							data: data,
 							cells: function( r, c ) {
 								var cellProperties = {};
-								if ( r === 0 && c === 0 && type === 'bar' ) {
+								if ( 0 === r && 0 === c && 'bar' === type ) {
 									cellProperties.readOnly = true;
 									cellProperties.type     = { renderer: readOnlyCell };
-								} else if ( r === 0 && 0 <= c && c <= 2 && type === 'progress_bar' ) {
+								} else if ( 0 === r && 0 <= c && 2 >= c && 'progress_bar' === type ) {
 									cellProperties.readOnly = true;
 									cellProperties.type     = { renderer: readOnlyCell };
 								}
