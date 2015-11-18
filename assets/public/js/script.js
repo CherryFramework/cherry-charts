@@ -1,7 +1,7 @@
 /**
  * Frontend scripts init
  */
-(function($) {
+(function( $ ) {
 
 	$(function() {
 

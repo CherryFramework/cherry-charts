@@ -131,7 +131,7 @@ if ( ! class_exists( 'cherry_charts_meta' ) ) {
 				$data[$type] = $current_data;
 			}
 
-			wp_localize_script( 'cherry-charts', 'cherry_charts_saved', $data );
+			wp_localize_script( 'cherry-charts', 'cherryChartsSaved', $data );
 		}
 
 		/**

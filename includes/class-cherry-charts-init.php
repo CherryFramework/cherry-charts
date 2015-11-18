@@ -147,7 +147,7 @@ if ( !class_exists( 'cherry_charts_init' ) ) {
 				'bar'            => $bar_data,
 			);
 
-			wp_localize_script( 'cherry-charts', 'cherry_charts_default', $data );
+			wp_localize_script( 'cherry-charts', 'cherryChartsDefault', $data );
 
 			// styles
 			wp_enqueue_style(
