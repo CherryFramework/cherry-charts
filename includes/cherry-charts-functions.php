@@ -27,17 +27,17 @@ function cherry_charts_get_meta( $post_id = null, $key = '', $default = false ) 
 
 	$charts_meta = wp_cache_get( 'cherry_charts_' . $post_id );
 
-	if ( !$charts_meta ) {
+	if ( ! $charts_meta ) {
 		$charts_meta = get_post_meta( $post_id, 'cherry_charts', true );
 		wp_cache_add( 'cherry_charts_' . $post_id, $charts_meta );
 	}
 
-	if ( !$charts_meta ) {
+	if ( ! $charts_meta ) {
 		return $default;
 	}
 
-	if ( isset($charts_meta[$key]) ) {
-		return $charts_meta[$key];
+	if ( isset( $charts_meta[ $key ] ) ) {
+		return $charts_meta[ $key ];
 	} else {
 		return $default;
 	}
@@ -108,7 +108,7 @@ function cherry_charts_maybe_to_rgba( $hex, $opacity ) {
 		return $hex;
 	}
 
-	$opacity = round( ($opacity/100), 2 );
+	$opacity = round( ( $opacity / 100 ), 2 );
 
 	if ( $hex[0] == '#' ) {
 		$tmp_hex = substr( $hex, 1 );
@@ -138,7 +138,7 @@ function cherry_charts_maybe_to_rgba( $hex, $opacity ) {
  */
 function cherry_charts_get_cache( $id ) {
 
-	if ( defined( 'CHERRY_USE_SHORTCODE_CACHING' ) && CHERRY_USE_SHORTCODE_CACHING === false ) {
+	if ( defined( 'CHERRY_USE_SHORTCODE_CACHING' ) && false === CHERRY_USE_SHORTCODE_CACHING ) {
 		return false;
 	}
 
@@ -158,7 +158,7 @@ function cherry_charts_get_cache( $id ) {
  */
 function cherry_charts_set_cache( $id, $content ) {
 
-	if ( defined( 'CHERRY_USE_SHORTCODE_CACHING' ) && CHERRY_USE_SHORTCODE_CACHING === false ) {
+	if ( defined( 'CHERRY_USE_SHORTCODE_CACHING' ) && false === CHERRY_USE_SHORTCODE_CACHING ) {
 		return false;
 	}
 
@@ -175,7 +175,7 @@ function cherry_charts_set_cache( $id, $content ) {
  */
 function cherry_charts_delete_cache( $id ) {
 
-	if ( defined( 'CHERRY_USE_SHORTCODE_CACHING' ) && CHERRY_USE_SHORTCODE_CACHING === false ) {
+	if ( defined( 'CHERRY_USE_SHORTCODE_CACHING' ) && false === CHERRY_USE_SHORTCODE_CACHING ) {
 		return false;
 	}
 
@@ -198,7 +198,7 @@ function cherry_charts_clear_cache() {
 
 	$results = $wpdb->get_results( $sql, ARRAY_A );
 
-	if ( empty( $results ) || !is_array( $results ) ) {
+	if ( empty( $results ) || ! is_array( $results ) ) {
 		return false;
 	}
 

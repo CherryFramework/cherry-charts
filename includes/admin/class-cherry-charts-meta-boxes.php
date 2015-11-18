@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // disable direct access
 }
 
-if ( !class_exists( 'cherry_charts_meta' ) ) {
+if ( ! class_exists( 'cherry_charts_meta' ) ) {
 
 	/**
 	 * cherry charts meta class
@@ -51,6 +51,9 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 		 */
 		public $builder = array();
 
+		/**
+		 * Constructor for the class.
+		 */
 		function __construct() {
 
 			/**
@@ -69,36 +72,36 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'callback' => array( $this, '_settings_box' ),
 					'screen'   => 'chart',
 					'context'  => 'normal',
-					'priority' => 'high'
+					'priority' => 'high',
 				),
 				'chart-content' => array(
 					'title'    => __( 'Set up content settings', 'cherry-charts' ),
 					'callback' => array( $this, '_content_box' ),
 					'screen'   => 'chart',
 					'context'  => 'normal',
-					'priority' => 'high'
+					'priority' => 'high',
 				),
 				'chart-data' => array(
 					'title'    => __( 'Set up chart data', 'cherry-charts' ),
 					'callback' => array( $this, '_data_box' ),
 					'screen'   => 'chart',
 					'context'  => 'normal',
-					'priority' => 'high'
+					'priority' => 'high',
 				),
 				'chart-style' => array(
 					'title'    => __( 'Set up chart style', 'cherry-charts' ),
 					'callback' => array( $this, '_style_box' ),
 					'screen'   => 'chart',
 					'context'  => 'normal',
-					'priority' => 'high'
+					'priority' => 'high',
 				),
 				'chart-shortcode' => array(
 					'title'    => __( 'Shortcode to paste', 'cherry-charts' ),
 					'callback' => array( $this, '_shortcode_box' ),
 					'screen'   => 'chart',
 					'context'  => 'normal',
-					'priority' => 'high'
-				)
+					'priority' => 'high',
+				),
 			) );
 
 			add_action( 'add_meta_boxes_chart', array( $this, 'register_meta_boxes' ) );
@@ -114,15 +117,20 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 		 * @since  1.0.0
 		 */
 		function pass_charts_data_js() {
+
 			global $typenow, $current_screen, $post;
+
 			if ( 'post' != $current_screen->base || 'chart' != $current_screen->id ) {
 				return;
 			}
+
 			$data = array();
+
 			foreach ( $this->chart_types as $type ) {
 				$current_data = cherry_charts_get_meta( $post->ID, 'data_' . $type, array() );
 				$data[$type] = $current_data;
 			}
+
 			wp_localize_script( 'cherry-charts', 'cherry_charts_saved', $data );
 		}
 
@@ -145,7 +153,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 				array(
 					'name_prefix' => $this->meta_key,
 					'pattern'     => 'inline',
-					'class'       => array( 'section' => 'single-section' )
+					'class'       => array( 'section' => 'single-section' ),
 				)
 			);
 
@@ -156,9 +164,18 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'screen'        => 'chart',
 					'context'       => 'normal',
 					'priority'      => 'core',
-					'callback_args' => ''
+					'callback_args' => '',
 				) );
-				add_meta_box( $id, $data['title'], $data['callback'], $data['screen'], $data['context'], $data['priority'], $data['callback_args'] );
+
+				add_meta_box(
+					$id,
+					$data['title'],
+					$data['callback'],
+					$data['screen'],
+					$data['context'],
+					$data['priority'],
+					$data['callback_args']
+				);
 			}
 		}
 
@@ -184,8 +201,8 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 						'multi_progress' => __( 'Multi Progress Bar', 'cherry-charts' ),
 						'pie'            => __( 'Pie', 'cherry-charts' ),
 						'doughnut'       => __( 'Doughnut', 'cherry-charts' ),
-						'bar'            => __( 'Bar', 'cherry-charts' )
-					)
+						'bar'            => __( 'Bar', 'cherry-charts' ),
+					),
 				),
 				'bar_type' => array(
 					'id'          => 'bar_type',
@@ -197,9 +214,9 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'options'     => array(
 						'radial'     => __( 'Radial', 'cherry-charts' ),
 						'horizontal' => __( 'Horizontal', 'cherry-charts' ),
-						'vertical'   => __( 'Vertical', 'cherry-charts' )
+						'vertical'   => __( 'Vertical', 'cherry-charts' ),
 					),
-					'chart_group'    => 'progress_bar-group depend-group'
+					'chart_group'    => 'progress_bar-group depend-group',
 				),
 				'inner_cut' => array(
 					'id'          => 'inner_cut',
@@ -211,7 +228,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'max_value'   => 100,
 					'min_value'   => 0,
 					'value_step'  => 1,
-					'chart_group' => 'progress_bar-group radial-subgroup doughnut-group depend-group'
+					'chart_group' => 'progress_bar-group radial-subgroup doughnut-group depend-group',
 				),
 				'width' => array(
 					'id'          => 'width',
@@ -222,7 +239,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'value'       => 200,
 					'max_value'   => 1200,
 					'min_value'   => 2,
-					'value_step'  => 1
+					'value_step'  => 1,
 				),
 				'height' => array(
 					'id'          => 'height',
@@ -233,8 +250,8 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'value'       => 200,
 					'max_value'   => 800,
 					'min_value'   => 2,
-					'value_step'  => 1
-				)
+					'value_step'  => 1,
+				),
 			);
 
 			$fields = apply_filters( 'cherry_charts_settins_meta_fields', $fields );
@@ -266,7 +283,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 				$templates = Cherry_Shortcode_Editor::dirlist( 'charts' );
 			} else {
 				$templates = array(
-					'default.tmpl' => 'default.tmpl'
+					'default.tmpl' => 'default.tmpl',
 				);
 			}
 
@@ -280,7 +297,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'description' => __( 'Select progress bar template (this option allowed only for progress bars)', 'cherry-charts' ),
 					'value'       => 'radial',
 					'options'     => $templates,
-					'chart_group' => 'progress_bar-group depend-group'
+					'chart_group' => 'progress_bar-group depend-group',
 				),
 				'chart_icon' => array(
 					'id'          => 'chart_icon',
@@ -288,7 +305,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'label'       => __( 'Chart Icon', 'cherry-charts' ),
 					'description' => __( 'Select chart icon', 'cherry-charts' ),
 					'value'       => '',
-					'chart_group' => 'progress_bar-group depend-group'
+					'chart_group' => 'progress_bar-group depend-group',
 				),
 				'icon_size' => array(
 					'id'          => 'icon_size',
@@ -300,7 +317,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'max_value'   => 120,
 					'min_value'   => 12,
 					'value_step'  => 1,
-					'chart_group' => 'progress_bar-group depend-group'
+					'chart_group' => 'progress_bar-group depend-group',
 				),
 				'icon_color' => array(
 					'id'          => 'icon_color',
@@ -308,7 +325,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'label'       => __( 'Chart icon color', 'cherry-charts' ),
 					'description' => '',
 					'value'       => '#bdc3c7',
-					'chart_group' => 'progress_bar-group depend-group'
+					'chart_group' => 'progress_bar-group depend-group',
 				),
 				'show_title' => array(
 					'id'            => 'show_title',
@@ -318,9 +335,9 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'value'         => 'true',
 					'toggle'        => array(
 						'true_toggle'  => __( 'Yes', 'cherry-charts' ),
-						'false_toggle' => __( 'No', 'cherry-charts' )
+						'false_toggle' => __( 'No', 'cherry-charts' ),
 					),
-					'chart_group' => 'multi_progress-group doughnut-group pie-group bar-group depend-group'
+					'chart_group' => 'multi_progress-group doughnut-group pie-group bar-group depend-group',
 				),
 				'show_labels' => array(
 					'id'            => 'show_labels',
@@ -330,9 +347,9 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'value'         => 'true',
 					'toggle'        => array(
 						'true_toggle'  => __( 'Yes', 'cherry-charts' ),
-						'false_toggle' => __( 'No', 'cherry-charts' )
+						'false_toggle' => __( 'No', 'cherry-charts' ),
 					),
-					'chart_group'   => 'doughnut-group pie-group bar-group depend-group'
+					'chart_group'   => 'doughnut-group pie-group bar-group depend-group',
 				),
 				'show_legend' => array(
 					'id'            => 'show_legend',
@@ -342,10 +359,10 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'value'         => 'true',
 					'toggle'        => array(
 						'true_toggle'  => __( 'Yes', 'cherry-charts' ),
-						'false_toggle' => __( 'No', 'cherry-charts' )
+						'false_toggle' => __( 'No', 'cherry-charts' ),
 					),
-					'chart_group'   => 'doughnut-group pie-group bar-group depend-group'
-				)
+					'chart_group'   => 'doughnut-group pie-group bar-group depend-group',
+				),
 			);
 
 			$fields = apply_filters( 'cherry_charts_content_meta_fields', $fields );
@@ -441,71 +458,71 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'type'        => 'colorpicker',
 					'label'       => __( 'Item #1 color', 'cherry-charts' ),
 					'description' => '',
-					'value'       => '#F7464A'
+					'value'       => '#F7464A',
 				),
 				'item_color_2' => array(
 					'id'          => 'item_color_2',
 					'type'        => 'colorpicker',
 					'label'       => __( 'Item #2 color', 'cherry-charts' ),
 					'description' => '',
-					'value'       => '#46BFBD'
+					'value'       => '#46BFBD',
 				),
 				'item_color_3' => array(
 					'id'          => 'item_color_3',
 					'type'        => 'colorpicker',
 					'label'       => __( 'Item #3 color', 'cherry-charts' ),
 					'description' => '',
-					'value'       => '#FDB45C'
+					'value'       => '#FDB45C',
 				),
 				'item_color_4' => array(
 					'id'          => 'item_color_4',
 					'type'        => 'colorpicker',
 					'label'       => __( 'Item #4 color', 'cherry-charts' ),
 					'description' => '',
-					'value'       => '#f39c12'
+					'value'       => '#f39c12',
 				),
 				'item_color_5' => array(
 					'id'          => 'item_color_5',
 					'type'        => 'colorpicker',
 					'label'       => __( 'Item #5 color', 'cherry-charts' ),
 					'description' => '',
-					'value'       => '#27ae60'
+					'value'       => '#27ae60',
 				),
 				'item_color_6' => array(
 					'id'          => 'item_color_6',
 					'type'        => 'colorpicker',
 					'label'       => __( 'Item #6 color', 'cherry-charts' ),
 					'description' => '',
-					'value'       => '#16a085'
+					'value'       => '#16a085',
 				),
 				'item_color_7' => array(
 					'id'          => 'item_color_7',
 					'type'        => 'colorpicker',
 					'label'       => __( 'Item #7 color', 'cherry-charts' ),
 					'description' => '',
-					'value'       => '#2980b9'
+					'value'       => '#2980b9',
 				),
 				'item_color_8' => array(
 					'id'          => 'item_color_8',
 					'type'        => 'colorpicker',
 					'label'       => __( 'Item #8 color', 'cherry-charts' ),
 					'description' => '',
-					'value'       => '#8e44ad'
+					'value'       => '#8e44ad',
 				),
 				'item_color_9' => array(
 					'id'          => 'item_color_9',
 					'type'        => 'colorpicker',
 					'label'       => __( 'Item #9 color', 'cherry-charts' ),
 					'description' => '',
-					'value'       => '#34495e'
+					'value'       => '#34495e',
 				),
 				'item_color_10' => array(
 					'id'          => 'item_color_10',
 					'type'        => 'colorpicker',
 					'label'       => __( 'Item #10 color', 'cherry-charts' ),
 					'description' => '',
-					'value'       => '#d35400'
-				)
+					'value'       => '#d35400',
+				),
 			);
 
 			$color_fields = apply_filters( 'cherry_charts_colors_meta_fields', $color_fields );
@@ -525,7 +542,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'type'        => 'colorpicker',
 					'label'       => __( 'Background color', 'cherry-charts' ),
 					'description' => '',
-					'value'       => '#ecf0f1'
+					'value'       => '#ecf0f1',
 				),
 				'items_opacity' => array(
 					'id'          => 'items_opacity',
@@ -535,7 +552,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'value'       => 100,
 					'min_value'   => 0,
 					'max_value'   => 100,
-					'step'        => 1
+					'step'        => 1,
 				),
 				'bg_opacity' => array(
 					'id'          => 'bg_opacity',
@@ -545,7 +562,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'value'       => 100,
 					'min_value'   => 0,
 					'max_value'   => 100,
-					'step'        => 1
+					'step'        => 1,
 				),
 				'canvas_stroke' => array(
 					'id'          => 'canvas_stroke',
@@ -555,14 +572,14 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'value'       => 5,
 					'min_value'   => 0,
 					'max_value'   => 30,
-					'step'        => 1
+					'step'        => 1,
 				),
 				'canvas_stroke_color' => array(
 					'id'          => 'canvas_stroke_color',
 					'type'        => 'colorpicker',
 					'label'       => __( 'Chart stroke color', 'cherry-charts' ),
 					'description' => '',
-					'value'       => '#bdc3c7'
+					'value'       => '#bdc3c7',
 				),
 				'canvas_stroke_opacity' => array(
 					'id'          => 'canvas_stroke_opacity',
@@ -572,8 +589,8 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 					'value'       => 100,
 					'min_value'   => 0,
 					'max_value'   => 100,
-					'step'        => 1
-				)
+					'step'        => 1,
+				),
 			);
 
 			$style_fields = apply_filters( 'cherry_charts_style_meta_fields', $style_fields );
@@ -610,11 +627,12 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 		 * @param  array   $post_id  saved post id
 		 * @param  object  $post     post object
 		 * @param  bool    $update   is updating existing post or not
+		 * @return null
 		 */
 		function _save_meta( $post_id, $post, $update ) {
 
 			// Verify the nonce.
-			if ( !isset( $_POST['cherry_charts_nonce'] )
+			if ( ! isset( $_POST['cherry_charts_nonce'] )
 				|| ! wp_verify_nonce( $_POST['cherry_charts_nonce'], 'cherry_charts_nonce' ) ) {
 				return;
 			}
@@ -626,7 +644,7 @@ if ( !class_exists( 'cherry_charts_meta' ) ) {
 
 			$data = isset( $_POST[$this->meta_key] ) ? $_POST[$this->meta_key] : false;
 
-			if ( !$data || !is_array($data) ) {
+			if ( ! $data || ! is_array($data) ) {
 				return;
 			}
 

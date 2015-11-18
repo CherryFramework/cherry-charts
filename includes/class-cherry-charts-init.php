@@ -23,6 +23,9 @@ if ( !class_exists( 'cherry_charts_init' ) ) {
 	 */
 	class cherry_charts_init {
 
+		/**
+		 * Constructor for the class
+		 */
 		function __construct() {
 
 			add_action( 'init', array( $this, '_register_post_type' ) );
@@ -58,7 +61,7 @@ if ( !class_exists( 'cherry_charts_init' ) ) {
 				'search_items'       => __( 'Search Charts', 'cherry-chart' ),
 				'parent_item_colon'  => __( 'Parent Charts:', 'cherry-chart' ),
 				'not_found'          => __( 'No Charts found.', 'cherry-chart' ),
-				'not_found_in_trash' => __( 'No Charts found in Trash.', 'cherry-chart' )
+				'not_found_in_trash' => __( 'No Charts found in Trash.', 'cherry-chart' ),
 			);
 
 			$args = array(
@@ -75,7 +78,7 @@ if ( !class_exists( 'cherry_charts_init' ) ) {
 				'has_archive'          => false,
 				'hierarchical'         => false,
 				'menu_position'        => 20,
-				'supports'             => array( 'title', 'author' )
+				'supports'             => array( 'title', 'author' ),
 			);
 
 			register_post_type( 'chart', apply_filters( 'cherry_chart_post_type_args', $args ) );
@@ -86,8 +89,6 @@ if ( !class_exists( 'cherry_charts_init' ) ) {
 		 * Attach metaboxes
 		 *
 		 * @since 1.0.0
-		 *
-		 * @param object  $post  post object
 		 */
 		function meta_boxes() {
 
@@ -106,7 +107,8 @@ if ( !class_exists( 'cherry_charts_init' ) ) {
 		 *
 		 * @since  1.0.0
 		 *
-		 * @param  string  $hook  admin page hook
+		 * @param  string  $hook  admin page hook.
+		 * @return void|null
 		 */
 		function admin_assets( $hook ) {
 
@@ -127,7 +129,7 @@ if ( !class_exists( 'cherry_charts_init' ) ) {
 				array( "Kia", 30 ),
 				array( "Nissan", 20 ),
 				array( "Toyota", 40 ),
-				array( "Honda", 25 )
+				array( "Honda", 25 ),
 			);
 			$bar_data = array(
 				array( "", "2012", "2013", "2014", "2015" ),
@@ -188,7 +190,8 @@ if ( !class_exists( 'cherry_charts_init' ) ) {
 		 *
 		 * @since  1.0.0
 		 *
-		 * @param  array $handles CSS handles to compile
+		 * @param  array $handles CSS handles to compile.
+		 * @return array
 		 */
 		function add_style_to_compiler( $handles ) {
 			$handles = array_merge(

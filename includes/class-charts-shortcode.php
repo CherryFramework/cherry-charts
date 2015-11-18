@@ -55,8 +55,8 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 		 *
 		 * @since  1.0.0
 		 *
-		 * @param  array  $buttons    default buttons
-		 * @param  string $shortcode  shortcode name
+		 * @param  array  $buttons    default buttons.
+		 * @param  string $shortcode  shortcode name.
 		 * @return array              filtered buttons
 		 */
 		function register_macros_buttons( $buttons, $shortcode ) {
@@ -114,7 +114,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 					'value' => __( 'Progress percent', 'cherry-shortcodes-templater' ),
 					'open'  => '%%PERCENT%%',
 					'close' => '',
-				)
+				),
 			);
 
 			return $buttons;
@@ -125,8 +125,8 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 		 *
 		 * @since  1.0.0
 		 *
-		 * @param  array   $shortcodes Original plugin shortcodes.
-		 * @return array               Modified array.
+		 * @param  array $shortcodes Original plugin shortcodes.
+		 * @return array             Modified array.
 		 */
 		public function shortcode_register( $shortcodes ) {
 			$shortcodes['charts'] = array(
@@ -138,17 +138,17 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 					'id' => array(
 						'default' => 0,
 						'name'    => __( 'Chart ID', 'cherry-charts' ),
-						'desc'    => __( 'Enter Chart ID to show', 'cherry-charts' )
+						'desc'    => __( 'Enter Chart ID to show', 'cherry-charts' ),
 					),
 					'custom_class' => array(
 						'default' => '',
 						'name'    => __( 'Class', 'cherry-charts' ),
 						'desc'    => __( 'Extra CSS class', 'cherry-charts' )
-					)
+					),
 				),
 				'icon'     => 'bar-chart-o', // Custom icon (font-awesome).
 				'function' => array( $this, 'charts_shortcode' ), // Name of shortcode function.
-				'use_template' => false
+				'use_template' => false,
 			);
 
 			return $shortcodes;
@@ -168,7 +168,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 
 			$defaults = array(
 				'id'           => '',
-				'custom_class' => ''
+				'custom_class' => '',
 			);
 
 			extract( shortcode_atts( $defaults, $atts, 'cherry_chart' ) );
@@ -282,12 +282,12 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			$style_array = array(
 				'width'            => $width . 'px',
 				'height'           => $height . 'px',
-				'background-color' => $bg_color
+				'background-color' => $bg_color,
 			);
 
 			$border = cherry_charts_get_meta( $id, 'canvas_stroke', 0 );
 
-			if ( $border != 0 ) {
+			if ( 0 != $border ) {
 
 				$border_color   = cherry_charts_get_meta( $id, 'canvas_stroke_color', '#bdc3c7' );
 				$border_opacity = cherry_charts_get_meta( $id, 'canvas_stroke_opacity', 100 );
@@ -324,7 +324,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 						'cutout'        => $cutout,
 						'color'         => $color,
 						'bg-color'      => $bg_color,
-						'user-settings' => json_encode( $user_chart_settings )
+						'user-settings' => json_encode( $user_chart_settings ),
 					);
 
 					$border_radius = ( $width > $height ) ? $width : $height;
@@ -407,7 +407,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 				'bar'      => $bar_format,
 				'total'    => $total,
 				'percent'  => $percent . '%',
-				'piestyle' => apply_filters( 'cherry_charts_progress_pie_styles', $icon_style )
+				'piestyle' => apply_filters( 'cherry_charts_progress_pie_styles', $icon_style ),
 			);
 
 			/**
@@ -528,13 +528,13 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 		/**
 		 * Replace callbaks for template file
 		 *
-		 *
-		 * @param  array   $matches replace matches
+		 * @since  1.0.0
+		 * @param  array   $matches replace matches.
 		 * @return string           string with replaced data
 		 */
 		function replace_callback( $matches ) {
 
-			if ( !is_array( $matches ) ) {
+			if ( ! is_array( $matches ) ) {
 				return '';
 			}
 
@@ -556,8 +556,8 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 		 *
 		 * @since  1.0.0
 		 *
-		 * @param  int    $id  Chart post ID
-		 * @return string      chart output
+		 * @param  int $id Chart post ID.
+		 * @return string  chart output
 		 */
 		function chart_bar( $id ) {
 			$width       = cherry_charts_get_meta( $id, 'width', 200 );
@@ -608,19 +608,19 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 					$color = cherry_charts_maybe_to_rgba( $color, $opacity );
 
 					$pass_data = $value;
-					array_splice($pass_data, 0, 1);
+					array_splice( $pass_data, 0, 1 );
 
 					$prepared_data[] = array(
-						'label'     => !empty( $value[0] ) ? $value[0] : '',
+						'label'     => ! empty( $value[0] ) ? $value[0] : '',
 						'fillColor' => $color,
-						'data'      => $pass_data
+						'data'      => $pass_data,
 					);
 				}
 
 			}
 
-			$prepared_data = json_encode($prepared_data);
-			$labels        = json_encode($labels);
+			$prepared_data = json_encode( $prepared_data );
+			$labels        = json_encode( $labels );
 
 			/**
 			 * Filter custom scrip parameters. Pass to init via data attribue 'user-settings'
@@ -629,7 +629,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			 * @since  1.0.0
 			 *
 			 * @var    array
-			 * @param  int  $id  chart ID
+			 * @param  int $id chart ID.
 			 */
 			$user_chart_settings = apply_filters( 'cherry_charts_bar_user_settings', array(), $id );
 
@@ -638,7 +638,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 				'bar'           => $prepared_data,
 				'show-labels'   => $show_labels,
 				'show-legend'   => $show_legend,
-				'user-settings' => json_encode( $user_chart_settings )
+				'user-settings' => json_encode( $user_chart_settings ),
 			);
 
 			$data_atts = cherry_charts_parse_atts( $data_atts );
@@ -658,9 +658,9 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 		 *
 		 * @since  1.0.0
 		 *
-		 * @param  int    $id  Chart post ID
-		 * @param  string $id  Chart type
-		 * @return string      Chart output
+		 * @param  int    $id Chart post ID.
+		 * @param  string $id Chart type.
+		 * @return string     Chart output
 		 */
 		function chart_pie( $id, $type ) {
 
@@ -699,13 +699,13 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 				$color = cherry_charts_get_meta( $id, 'item_color_' . ( $index + 1), '' );
 				$color = cherry_charts_maybe_to_rgba( $color, $opacity );
 				$prepared_data[$index] = array(
-					'value' => !empty( $value[1] ) ? intval( $value[1] ) : 0,
-					'label' => !empty( $value[0] ) ? $value[0] : '',
-					'color' => $color
+					'value' => ! empty( $value[1] ) ? intval( $value[1] ) : 0,
+					'label' => ! empty( $value[0] ) ? $value[0] : '',
+					'color' => $color,
 				);
 			}
 
-			$prepared_data = json_encode($prepared_data);
+			$prepared_data = json_encode( $prepared_data );
 
 			/**
 			 * Filter custom scrip parameters. Pass to init via data attribue 'user-settings'
@@ -714,7 +714,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			 * @since  1.0.0
 			 *
 			 * @var    array
-			 * @param  int  $id  chart ID
+			 * @param  int $id chart ID.
 			 */
 			$user_chart_settings = apply_filters( 'cherry_charts_pie_user_settings', array(), $id );
 
@@ -722,7 +722,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 				$type           => $prepared_data,
 				'show-labels'   => $show_labels,
 				'show-legend'   => $show_legend,
-				'user-settings' => json_encode( $user_chart_settings )
+				'user-settings' => json_encode( $user_chart_settings ),
 			);
 
 			if ( 'doughnut' == $type ) {
@@ -751,6 +751,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 		 * @return bool|string            Template's content.
 		 */
 		public static function get_template_path( $template_name, $shortcode ) {
+
 			$file       = false;
 			$default    = CHERRY_CHARTS_DIR . 'templates/shortcodes/' . $shortcode . '/default.tmpl';
 			$subdir     = 'templates/shortcodes/' . $shortcode . '/' . $template_name;

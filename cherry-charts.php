@@ -18,6 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'cherry_charts' ) ) {
+
 	/**
 	 * Main plugin class
 	 */
@@ -30,13 +31,16 @@ if ( ! class_exists( 'cherry_charts' ) ) {
 		public $version = '1.1.0';
 
 		/**
-		 * Constructor
+		 * Constructor for the class
 		 */
 		public function __construct() {
+
 			// Set the constants needed by the plugin.
 			$this->constants();
+
 			// Internationalize the text strings used.
 			add_action( 'plugins_loaded', array( $this, 'lang' ), 2 );
+
 			// Include necessary files
 			add_action( 'plugins_loaded', array( $this, 'includes' ), 5 );
 			add_action( 'plugins_loaded', array( $this, 'admin' ), 1 );
@@ -107,7 +111,7 @@ if ( ! class_exists( 'cherry_charts' ) ) {
 				$Cherry_Plugin_Update -> init( array(
 						'version'			=> CHERRY_CHARTS_VERSION,
 						'slug'				=> CHERRY_CHARTS_SLUG,
-						'repository_name'	=> CHERRY_CHARTS_SLUG
+						'repository_name'	=> CHERRY_CHARTS_SLUG,
 				));
 			}
 		}

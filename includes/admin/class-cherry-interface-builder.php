@@ -1,5 +1,7 @@
 <?php
 /**
+ * // @codingStandardsIgnoreStart
+ *
  * Class for the building interface elements in admin panel.
  *
  * @package    Cherry_Framework
@@ -24,23 +26,23 @@ class Cherry_Interface_Builder {
 		'name_prefix'   => 'cherry',
 		'pattern'       => 'inline',
 		'class'         => array(
-								'submit'  => '',
-								'text'    => 'widefat',
-								'label'   => '',
-								'section' => '',
-							),
+			'submit'  => '',
+			'text'    => 'widefat',
+			'label'   => '',
+			'section' => '',
+		),
 		'html_wrappers' => array(
-								'label_start'        => '<label %1s %2s>',
-								'label_end'          => '</label>',
-								'before_title'       => '<h4 %1s>',
-								'after_title'        => '</h4>',
-								'before_decsription' => '<small %1s>',
-								'after_decsription'  => '</small>',
-							),
+			'label_start'        => '<label %1s %2s>',
+			'label_end'          => '</label>',
+			'before_title'       => '<h4 %1s>',
+			'after_title'        => '</h4>',
+			'before_decsription' => '<small %1s>',
+			'after_decsription'  => '</small>',
+		),
 		'widget'        => array(
-								'id_base' => '',
-								'number'  => '',
-							),
+			'id_base' => '',
+			'number'  => '',
+		),
 		'hidden_items'	=> array(),
 	);
 
@@ -1107,3 +1109,5 @@ class Cherry_Interface_Builder {
 		wp_enqueue_style( 'interface-builder' );
 	}
 }
+
+// @codingStandardsIgnoreEnd
