@@ -10,111 +10,118 @@
 
 			return this.each( function() {
 
-				if ( options ){
+				var table, type, spareRows, spareCols, input, getHandsontableData, setUpHandsontable;
+
+				if ( options ) {
 					$.extend( settings, options );
 				}
 
-				var
-					table     = $( this ),
-					type      = table.data( 'type' ),
-					spareRows = table.data( 'spare_rows' ),
-					spareCols = table.data( 'spare_cols' ),
-					input     = $( 'input.data-input-' + type ),
-					getHandsontableData = function() {
-						return table.data( 'handsontable' ).getData();
-					},
-					setUpHandsontable = function() {
 
-						var data = window.cherryChartsSaved[type],
-							readOnlyCell,
-							tableSettings;
+				table     = $( this );
+				type      = table.data( 'type' );
+				spareRows = table.data( 'spare_rows' );
+				spareCols = table.data( 'spare_cols' );
+				input     = $( 'input.data-input-' + type );
 
-						if ( 0 === data.length ) {
-							data = cherryChartsDefault[type];
-						}
+				getHandsontableData = function() {
+					return table.data( 'handsontable' ).getData();
+				};
 
-						tableSettings = {
-							minRows: 2,
-							minCols: 2,
-							startRows: 10,
-							startCols: 10,
-							minSpareRows: spareRows,
-							minSpareCols: spareCols
-						}
+				setUpHandsontable = function() {
 
-						readOnlyCell = function ( instance, td ) {
-							window.Handsontable.TextCell.renderer.apply( this, arguments );
-							$( td ).css({
-								background: '#e8e8e8'
-							});
-						};
+					var data = window.cherryChartsSaved[type],
+						readOnlyCell,
+						tableSettings;
 
-						table.handsontable({
-							data: data,
-							cells: function( r, c ) {
-								var cellProperties = {};
-								if ( 0 === r && 0 === c && 'bar' === type ) {
-									cellProperties.readOnly = true;
-									cellProperties.type     = { renderer: readOnlyCell };
-								} else if ( 0 === r && 0 <= c && 2 >= c && 'progress_bar' === type ) {
-									cellProperties.readOnly = true;
-									cellProperties.type     = { renderer: readOnlyCell };
-								}
-								return cellProperties;
-							},
-
-							onChange: function () {
-								var tdata = getHandsontableData();
-								tdata = JSON.stringify( tdata );
-								input.val( tdata );
-							}
-						});
-
-						table.handsontable( 'updateSettings', tableSettings );
-
-						table.handsontable( 'render' );
-
-						if ( ! table.hasClass( 'active' ) ) {
-							table.hide();
-						}
+					if ( 0 === data.length ) {
+						data = window.cherryChartsDefault[type];
 					}
 
+					tableSettings = {
+						minRows: 2,
+						minCols: 2,
+						startRows: 10,
+						startCols: 10,
+						minSpareRows: spareRows,
+						minSpareCols: spareCols
+					};
 
-				_constructor();
+					readOnlyCell = function( instance, td ) {
+						window.Handsontable.TextCell.renderer.apply( this, arguments );
+						$( td ).css({
+							background: '#e8e8e8'
+						});
+					};
 
-				function _constructor() {
+					table.handsontable({
+						data: data,
+						cells: function( r, c ) {
+							var cellProperties = {};
+							if ( 0 === r && 0 === c && 'bar' === type ) {
+								cellProperties.readOnly = true;
+								cellProperties.type     = { renderer: readOnlyCell };
+							} else if ( 0 === r && 0 <= c && 2 >= c && 'progress_bar' === type ) {
+								cellProperties.readOnly = true;
+								cellProperties.type     = { renderer: readOnlyCell };
+							}
+							return cellProperties;
+						},
+
+						onChange: function() {
+							var tdata = getHandsontableData();
+							tdata = JSON.stringify( tdata );
+							input.val( tdata );
+						}
+					});
+
+					table.handsontable( 'updateSettings', tableSettings );
+
+					table.handsontable( 'render' );
+
+					if ( ! table.hasClass( 'active' ) ) {
+						table.hide();
+					}
+				};
+
+
+				__constructor();
+
+				function __constructor() {
 					setUpHandsontable();
 				}
 
 			});
 		}
-	}
+	};
 
 	$.fn.cherryChartsData = function( method ) {
 		if ( methods[method] ) {
-			return methods[method].apply( this, Array.prototype.slice.call( arguments, 1 ));
-		} else if ( typeof method === 'object' || ! method ) {
+			return methods[method].apply( this, Array.prototype.slice.call( arguments, 1 ) );
+		} else if ( 'object' === typeof method || ! method ) {
 			return methods.init.apply( this, arguments );
 		} else {
 			$.error( 'Method with name ' +  method + ' is not exist for jQuery.cherryPortfolioLayoutPlugin' );
 		}
-	} //end plugin
+	}; //end plugin
 
 	$( function() {
+
+		var barType, val, switchInnerCut;
+
 		$( '.cherry-chart-data_ ' ).cherryChartsData();
 
-		var bar_type = $( '#cherry_charts-bar_type' ).val(),
-			val      = $( '#cherry_charts-type' ).val();
+		barType = $( '#cherry_charts-bar_type' ).val(),
+		val     = $( '#cherry_charts-type' ).val(),
 
-		switch_inner_cut = function() {
-			if ( 'radial' === bar_type ) {
+		switchInnerCut = function() {
+			if ( 'radial' === barType ) {
 				$( '#wrap-cherry_charts-inner_cut' ).show();
 			} else {
 				$( '#wrap-cherry_charts-inner_cut' ).hide();
 			}
-		}
+		};
 
-		function switch_meta() {
+		function switchMeta() {
 			$( '#cherry-chart-data-' + val )
 				.addClass( 'active' )
 				.show()
@@ -129,21 +136,22 @@
 				}
 			});
 			if ( 'progress_bar' === val ) {
-				bar_type = $('#cherry_charts-bar_type').val();
-				switch_inner_cut();
+				barType = $( '#cherry_charts-bar_type' ).val();
+				switchInnerCut();
 			}
 		}
 
-		switch_meta();
+		switchMeta();
 
 		$( document ).on( 'change.cherry_charts', '#cherry_charts-type', function() {
-			val = $(this).val();
-			switch_meta();
+			val = $( this ).val();
+			switchMeta();
 		});
+
 		$( document ).on( 'change.cherry_charts', '#cherry_charts-bar_type', function() {
-			bar_type = $( '#cherry_charts-bar_type' ).val();
-			switch_inner_cut();
+			barType = $( '#cherry_charts-bar_type' ).val();
+			switchInnerCut();
 		});
-	})
+	});
 
 })(jQuery);

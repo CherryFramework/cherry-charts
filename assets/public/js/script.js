@@ -6,7 +6,7 @@
 	$(function() {
 
 		// Setup radial progress bar
-		$( '.cherry-charts-bar.radial' ).each( function( index, el ) {
+		$( '.cherry-charts-bar.radial' ).each( function() {
 
 			var dataProgress = [
 					{
@@ -24,7 +24,7 @@
 					animationSteps: 100,
 					segmentShowStroke: false,
 					percentageInnerCutout: $( this ).data( 'cutout' ),
-					animationEasing: "easeOutExpo"
+					animationEasing: 'easeOutExpo'
 				},
 				userOptions = $( this ).data( 'user-settings' ),
 				ctxProgress,
@@ -34,13 +34,13 @@
 				$.extend( optionProgress, userOptions );
 			}
 
-			ctxProgress = $( 'canvas', this ).get( 0 ).getContext( "2d" );
-			chartProgress = new Chart( ctxProgress ).Doughnut( dataProgress, optionProgress );
+			ctxProgress = $( 'canvas', this ).get( 0 ).getContext( '2d' );
+			chartProgress = new window.Chart( ctxProgress ).Doughnut( dataProgress, optionProgress );
 
 		});
 
 		// Setup pie data
-		$( '.cherry-charts-pie' ).each( function( index, el ) {
+		$( '.cherry-charts-pie' ).each( function() {
 
 			var pieData = $( this ).data( 'pie' ),
 				showLabels = $( this ).data( 'show-labels' ),
@@ -50,7 +50,7 @@
 					showTooltips: showLabels,
 					animationSteps: 100,
 					segmentShowStroke: false,
-					animationEasing: "easeOutExpo"
+					animationEasing: 'easeOutExpo'
 				},
 				userOptions = $( this ).data( 'user-settings' ),
 				ctxPie,
@@ -61,17 +61,17 @@
 				$.extend( optionPie, userOptions );
 			}
 
-			ctxPie = $( 'canvas', this ).get( 0 ).getContext( "2d" );
-			chartPie = new Chart( ctxPie ).Pie( pieData, optionPie );
+			ctxPie = $( 'canvas', this ).get( 0 ).getContext( '2d' );
+			chartPie = new window.Chart( ctxPie ).Pie( pieData, optionPie );
 
-			if ( 'yes' == showLegend ) {
+			if ( 'yes' === showLegend ) {
 				legend = chartPie.generateLegend();
 				$( this ).append( legend );
 			}
 		});
 
 		// Setup doughnut data
-		$( '.cherry-charts-doughnut' ).each( function( index, el ) {
+		$( '.cherry-charts-doughnut' ).each( function() {
 
 			var doughnutData = $( this ).data( 'doughnut' ),
 				showLabels = $( this ).data( 'show-labels' ),
@@ -82,7 +82,7 @@
 					animationSteps: 100,
 					percentageInnerCutout: $( this ).data( 'cutout' ),
 					segmentShowStroke: false,
-					animationEasing: "easeOutExpo"
+					animationEasing: 'easeOutExpo'
 				},
 				userOptions = $( this ).data( 'user-settings' ),
 				ctxDoughnut,
@@ -93,17 +93,17 @@
 				$.extend( optionDoughnut, userOptions );
 			}
 
-			ctxDoughnut = $( 'canvas', this ).get( 0 ).getContext( "2d" );
-			chartDoughnut = new Chart( ctxDoughnut ).Doughnut( doughnutData, optionDoughnut );
+			ctxDoughnut = $( 'canvas', this ).get( 0 ).getContext( '2d' );
+			chartDoughnut = new window.Chart( ctxDoughnut ).Doughnut( doughnutData, optionDoughnut );
 
-			if ( 'yes' == showLegend ) {
+			if ( 'yes' === showLegend ) {
 				legend = chartDoughnut.generateLegend();
 				$( this ).append( legend );
 			}
 		});
 
 		// Setup bar chart
-		$( '.cherry-charts-type-bar' ).each( function( index, el ) {
+		$( '.cherry-charts-type-bar' ).each( function() {
 
 			var barData = {
 					labels: $( this ).data( 'labels' ),
@@ -116,8 +116,8 @@
 					showTooltips: showLabels,
 					animationSteps: 100,
 					segmentShowStroke: false,
-					multiTooltipTemplate: "<%= datasetLabel %>: <%= value %>",
-					animationEasing: "easeOutExpo"
+					multiTooltipTemplate: '<%= datasetLabel %>: <%= value %>',
+					animationEasing: 'easeOutExpo'
 				},
 				userOptions = $( this ).data( 'user-settings' ),
 				ctxBar,
@@ -128,22 +128,22 @@
 				$.extend( optionsBar, userOptions );
 			}
 
-			ctxBar = $( 'canvas', this ).get( 0 ).getContext( "2d" );
-			chartBar = new Chart( ctxBar ).Bar( barData, optionsBar );
+			ctxBar = $( 'canvas', this ).get( 0 ).getContext( '2d' );
+			chartBar = new window.Chart( ctxBar ).Bar( barData, optionsBar );
 
-			if ( true == showLegend ) {
+			if ( true === showLegend ) {
 				legend = chartBar.generateLegend();
 				$( this ).append( legend );
 			}
 		});
 
 		// Setup vertical and horizontal progress bars
-		$( '.cherry-charts-bar.horizontal' ).each( function( index, el ) {
+		$( '.cherry-charts-bar.horizontal' ).each( function() {
 			var width = $( this ).data( 'value' );
 			$( '.cherry-charts-progress', $( this ) ).css( 'width', width + '%' );
 		});
 
-		$('.cherry-charts-bar.vertical').each( function( index, el ) {
+		$('.cherry-charts-bar.vertical').each( function() {
 
 			var height  = $( this ).data( 'value' ),
 				animate = $( this ).data( 'animate' );
@@ -153,6 +153,6 @@
 			}
 
 		});
-	})
+	});
 
 })(jQuery);
