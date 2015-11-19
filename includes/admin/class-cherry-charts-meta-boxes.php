@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Meta boxes management class
  *
@@ -14,54 +13,59 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // disable direct access
 }
 
-if ( ! class_exists( 'cherry_charts_meta' ) ) {
+if ( ! class_exists( 'Cherry_Charts_Meta' ) ) {
 
 	/**
-	 * cherry charts meta class
+	 * Cherry charts meta class
 	 *
 	 * @since  1.0.0
 	 */
-	class cherry_charts_meta {
+	class Cherry_Charts_Meta {
 
 		/**
 		 * Charts meta key
+		 *
+		 * @var  string
 		 */
 		private $meta_key = 'cherry_charts';
 
 		/**
 		 * Chart types
+		 *
+		 * @var  array
 		 */
 		private $chart_types = array( 'progress_bar', 'multi_progress', 'pie', 'doughnut', 'bar' );
 
 		/**
-		 * chart meta boxes
+		 * Chart meta boxes
+		 *
 		 * @var  array
 		 */
 		public $meta_boxes = array();
 
 		/**
-		 * chart meta fields
+		 * Chart meta fields
+		 *
 		 * @var  array
 		 */
 		public $meta_fields = array();
 
 		/**
-		 * chart meta fields builder
+		 * Chart meta fields builder
+		 *
 		 * @var  array
 		 */
 		public $builder = array();
 
 		/**
 		 * Constructor for the class.
+		 *
+		 * @todo also need to delete cache on shortcode templates saving
 		 */
 		function __construct() {
 
 			/**
-			 * @todo also need to delete cache on shortcode templates saving
-			 */
-
-			/**
-			 * filter chart metaboxes list
+			 * Filter chart metaboxes list
 			 *
 			 * @since  1.0.0
 			 * @var    array
@@ -128,7 +132,7 @@ if ( ! class_exists( 'cherry_charts_meta' ) ) {
 
 			foreach ( $this->chart_types as $type ) {
 				$current_data = cherry_charts_get_meta( $post->ID, 'data_' . $type, array() );
-				$data[$type] = $current_data;
+				$data[ $type ] = $current_data;
 			}
 
 			wp_localize_script( 'cherry-charts', 'cherryChartsSaved', $data );
@@ -184,7 +188,8 @@ if ( ! class_exists( 'cherry_charts_meta' ) ) {
 		 *
 		 * @since  1.0.0
 		 *
-		 * @param  object $post post object
+		 * @param  object $post post object.
+		 * @return void
 		 */
 		function _settings_box( $post ) {
 
@@ -262,7 +267,7 @@ if ( ! class_exists( 'cherry_charts_meta' ) ) {
 
 			foreach ( $fields as $field ) {
 				$field['value'] = cherry_charts_get_meta( $post->ID, $field['id'], $field['value'] );
-				$row_class = !empty( $field['chart_group'] ) ? esc_attr( $field['chart_group'] ) : '';
+				$row_class = ! empty( $field['chart_group'] ) ? esc_attr( $field['chart_group'] ) : '';
 				$result .= '<div class="' . $row_class . '">' . $this->builder->add_form_item( $field ) . '</div>';
 			}
 
@@ -272,9 +277,12 @@ if ( ! class_exists( 'cherry_charts_meta' ) ) {
 		}
 
 		/**
-		 * chart content meta box
+		 * Chart content meta box
 		 *
 		 * @since  1.0.0
+		 *
+		 * @param  object $post post object.
+		 * @return void
 		 */
 		function _content_box( $post ) {
 
@@ -373,7 +381,7 @@ if ( ! class_exists( 'cherry_charts_meta' ) ) {
 
 			foreach ( $fields as $field ) {
 				$field['value'] = cherry_charts_get_meta( $post->ID, $field['id'], $field['value'] );
-				$row_class = !empty( $field['chart_group'] ) ? esc_attr( $field['chart_group'] ) : '';
+				$row_class = ! empty( $field['chart_group'] ) ? esc_attr( $field['chart_group'] ) : '';
 				$result .= '<div class="' . $row_class . '">' . $this->builder->add_form_item( $field ) . '</div>';
 			}
 
@@ -386,7 +394,8 @@ if ( ! class_exists( 'cherry_charts_meta' ) ) {
 		 *
 		 * @since  1.0.0
 		 *
-		 * @param  object $post post obkect
+		 * @param  object $post post object.
+		 * @return void
 		 */
 		function _data_box( $post ) {
 
@@ -449,7 +458,8 @@ if ( ! class_exists( 'cherry_charts_meta' ) ) {
 		 *
 		 * @since  1.0.0
 		 *
-		 * @param  object $post post obkect
+		 * @param  object $post post object.
+		 * @return void
 		 */
 		function _style_box( $post ) {
 			$color_fields = array(
@@ -612,7 +622,8 @@ if ( ! class_exists( 'cherry_charts_meta' ) ) {
 		 *
 		 * @since  1.0.0
 		 *
-		 * @param  object $post post obkect
+		 * @param  object $post post object.
+		 * @return void
 		 */
 		function _shortcode_box( $post ) {
 			global $post;
@@ -624,9 +635,9 @@ if ( ! class_exists( 'cherry_charts_meta' ) ) {
 		 *
 		 * @since  1.0.0
 		 *
-		 * @param  array   $post_id  saved post id
-		 * @param  object  $post     post object
-		 * @param  bool    $update   is updating existing post or not
+		 * @param  array  $post_id saved post id.
+		 * @param  object $post    post object.
+		 * @param  bool   $update  is updating existing post or not.
 		 * @return null
 		 */
 		function _save_meta( $post_id, $post, $update ) {
@@ -642,18 +653,18 @@ if ( ! class_exists( 'cherry_charts_meta' ) ) {
 				return;
 			}
 
-			$data = isset( $_POST[$this->meta_key] ) ? $_POST[$this->meta_key] : false;
+			$data = isset( $_POST[ $this->meta_key ] ) ? $_POST[ $this->meta_key ] : false;
 
-			if ( ! $data || ! is_array($data) ) {
+			if ( ! $data || ! is_array( $data ) ) {
 				return;
 			}
 
 			foreach ( $data as $key => $value ) {
-				$type = isset( $this->meta_fields[$key]['type'] ) ? $this->meta_fields[$key]['type'] : 'text';
+				$type = isset( $this->meta_fields[ $key ]['type'] ) ? $this->meta_fields[ $key ]['type'] : 'text';
 				if ( false === strpos( $key, 'data_' ) ) {
-					$data[$key] = $this->_sanitize_meta( $value, $type );
+					$data[ $key ] = $this->_sanitize_meta( $value, $type );
 				} else {
-					$data[$key] = $this->_sanitize_table_data( $value, $key );
+					$data[ $key ] = $this->_sanitize_table_data( $value, $key );
 				}
 			}
 
@@ -667,7 +678,8 @@ if ( ! class_exists( 'cherry_charts_meta' ) ) {
 		 *
 		 * @since  1.0.0
 		 *
-		 * @param  array  $id  post ID
+		 * @param  array $id post ID.
+		 * @return void
 		 */
 		function _delete_chart_transient( $id ) {
 			cherry_charts_delete_cache( $id );
@@ -678,8 +690,8 @@ if ( ! class_exists( 'cherry_charts_meta' ) ) {
 		 *
 		 * @since  1.0.0
 		 *
-		 * @param  mixed  $value  meta value to save
-		 * @param  string $type   meta value type
+		 * @param  mixed  $value  meta value to save.
+		 * @param  string $type   meta value type.
 		 * @return mixed          sanitized value
 		 */
 		function _sanitize_meta( $value, $type ) {
@@ -702,8 +714,8 @@ if ( ! class_exists( 'cherry_charts_meta' ) ) {
 		 *
 		 * @since  1.0.0
 		 *
-		 * @param  string $value JSON-encoded data
-		 * @param  string $key   data key
+		 * @param  string $value JSON-encoded data.
+		 * @param  string $key   data key.
 		 * @return array         sanitized data array
 		 */
 		function _sanitize_table_data( $value, $key ) {
@@ -725,7 +737,7 @@ if ( ! class_exists( 'cherry_charts_meta' ) ) {
 
 				$f_row = array_filter( $row );
 
-				if ( empty($f_row) ) {
+				if ( empty( $f_row ) ) {
 					continue;
 				}
 				array_walk(
@@ -744,47 +756,48 @@ if ( ! class_exists( 'cherry_charts_meta' ) ) {
 		 *
 		 * @since  1.0.0
 		 *
-		 * @param  mixed  &$value input value
-		 * @param  int    $col    value index in row
-		 * @param  array  $data   array with value row index and table type
+		 * @param  mixed $value input value.
+		 * @param  int   $col    value index in row.
+		 * @param  array $data   array with value row index and table type.
+		 * @return null
 		 */
 		function _sanitize_table_row( &$value, $col, $data ) {
 
 			$row = $data['row'];
 
 			// sanitize service titles in progress bar table (just in case)
-			if ( 'progress_bar' == $data['type'] && $row == 0 ) {
+			if ( 'progress_bar' == $data['type'] && 0 == $row ) {
 				$value = sanitize_text_field( $value );
 				return;
 			}
 			// sanitize label in progress bar table
-			if ( 'progress_bar' == $data['type'] && $row == 1 && $col == 0 ) {
+			if ( 'progress_bar' == $data['type'] && 1 == $row && 0 == $col ) {
 				$value = sanitize_text_field( $value );
 				return;
 			}
 			// sanitize values in progress bar
-			if ( 'progress_bar' == $data['type'] && $row >=1 && $col >= 1 ) {
-				$value = ( intval( $value ) != 0 ) ? intval( $value ) : null;
+			if ( 'progress_bar' == $data['type'] && 1 <= $row && 1 <= $col ) {
+				$value = ( 0 != intval( $value ) ) ? intval( $value ) : null;
 				return;
 			}
 			// sanitize label in doughnut & pie
-			if ( ( 'pie' == $data['type'] || 'doughnut' == $data['type'] ) && $col == 0 ) {
+			if ( ( 'pie' == $data['type'] || 'doughnut' == $data['type'] ) && 0 == $col ) {
 				$value = sanitize_text_field( $value );
 				return;
 			}
 			// sanitize value in doughnut & pie
-			if ( ( 'pie' == $data['type'] || 'doughnut' == $data['type'] ) && $col == 1 ) {
-				$value = ( intval( $value ) != 0 ) ? intval( $value ) : null;
+			if ( ( 'pie' == $data['type'] || 'doughnut' == $data['type'] ) && 1 == $col ) {
+				$value = ( 0 != intval( $value ) ) ? intval( $value ) : null;
 				return;
 			}
 			// sanitize labels in bar chart
-			if ( 'bar' == $data['type'] && ( $col == 0 || $row == 0 ) ) {
+			if ( 'bar' == $data['type'] && ( 0 == $col || 0 == $row ) ) {
 				$value = sanitize_text_field( $value );
 				return;
 			}
 			// sanitize values in bar chart
-			if ( 'bar' == $data['type'] && $col != 0 && $row != 0 ) {
-				$value = ( intval( $value ) != 0 ) ? intval( $value ) : null;
+			if ( 'bar' == $data['type'] && 0 !== $col && 0 !== $row ) {
+				$value = ( 0 !== intval( $value ) ) ? intval( $value ) : null;
 				return;
 			}
 		}

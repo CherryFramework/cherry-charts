@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: Cherry Charts
  * Plugin URI:  http://www.cherryframework.com/
@@ -11,20 +10,27 @@
  * License:     GPL-3.0+
  * License URI: http://www.gnu.org/licenses/gpl-3.0.txt
  * Domain Path: /languages
+ *
+ * @package  Cherry Charts
+ * @category Core
+ * @author   Cherry Team
+ * @license  GPL-2.0+
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // disable direct access
 }
 
-if ( ! class_exists( 'cherry_charts' ) ) {
+if ( ! class_exists( 'Cherry_Charts' ) ) {
 
 	/**
 	 * Main plugin class
 	 */
-	final class cherry_charts {
+	final class Cherry_Charts {
 
 		/**
+		 * PLugin version
+		 *
 		 * @var   string
 		 * @since 1.0.0
 		 */
@@ -95,7 +101,8 @@ if ( ! class_exists( 'cherry_charts' ) ) {
 		/**
 		 * Include core files for both: admin and public
 		 *
-		 * @since 1.0.0
+		 * @since  1.0.0
+		 * @return void
 		 */
 		function includes() {
 			require_once( 'includes/cherry-charts-functions.php' );
@@ -103,6 +110,12 @@ if ( ! class_exists( 'cherry_charts' ) ) {
 			require_once( 'includes/class-charts-shortcode.php' );
 		}
 
+		/**
+		 * Register admin-related actions and hooks
+		 *
+		 * @since  1.0.0
+		 * @return void
+		 */
 		function admin() {
 			if ( is_admin() ) {
 				require_once( CHERRY_CHARTS_DIR . 'admin/includes/class-cherry-update/class-cherry-plugin-update.php' );
@@ -115,8 +128,7 @@ if ( ! class_exists( 'cherry_charts' ) ) {
 				));
 			}
 		}
-
 	}
 
-	new cherry_charts();
+	new Cherry_Charts();
 }

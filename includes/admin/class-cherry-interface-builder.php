@@ -1,7 +1,5 @@
 <?php
 /**
- * // @codingStandardsIgnoreStart
- *
  * Class for the building interface elements in admin panel.
  *
  * @package    Cherry_Framework
@@ -11,6 +9,9 @@
  * @link       http://www.cherryframework.com/
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
+
+// @codingStandardsIgnoreStart
+
 class Cherry_Interface_Builder {
 
 	private $google_font_url = null;

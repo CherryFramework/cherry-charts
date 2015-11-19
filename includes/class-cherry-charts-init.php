@@ -99,7 +99,7 @@ if ( !class_exists( 'cherry_charts_init' ) ) {
 			}
 
 			require_once 'admin/class-cherry-charts-meta-boxes.php';
-			new cherry_charts_meta();
+			new Cherry_Charts_Meta();
 		}
 
 		/**
