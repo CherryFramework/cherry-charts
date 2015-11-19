@@ -143,7 +143,7 @@
 			$( '.cherry-charts-progress', $( this ) ).css( 'width', width + '%' );
 		});
 
-		$('.cherry-charts-bar.vertical').each( function() {
+		$( '.cherry-charts-bar.vertical' ).each( function() {
 
 			var height  = $( this ).data( 'value' ),
 				animate = $( this ).data( 'animate' );
@@ -155,4 +155,4 @@
 		});
 	});
 
-})(jQuery);
+})( jQuery );

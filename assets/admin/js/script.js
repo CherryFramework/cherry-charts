@@ -16,7 +16,6 @@
 					$.extend( settings, options );
 				}
 
-
 				table     = $( this );
 				type      = table.data( 'type' );
 				spareRows = table.data( 'spare_rows' );
@@ -83,7 +82,6 @@
 					}
 				};
 
-
 				__constructor();
 
 				function __constructor() {
@@ -102,7 +100,7 @@
 		} else {
 			$.error( 'Method with name ' +  method + ' is not exist for jQuery.cherryPortfolioLayoutPlugin' );
 		}
-	}; //end plugin
+	};
 
 	$( function() {
 
@@ -154,4 +152,4 @@
 		});
 	});
 
-})(jQuery);
+})( jQuery );
