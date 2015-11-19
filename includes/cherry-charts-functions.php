@@ -14,13 +14,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * get chart meta field
+ * Get single chart meta value by key
  *
  * @since  1.0.0
  *
- * @param  int     $post_id charts post ID
- * @param  string  $key     meta filed name
- * @param  boolean $default default meta field value
+ * @param  int     $post_id charts post ID.
+ * @param  string  $key     meta filed name.
+ * @param  boolean $default default meta field value.
  * @return mixed            result
  */
 function cherry_charts_get_meta( $post_id = null, $key = '', $default = false ) {
@@ -48,7 +48,7 @@ function cherry_charts_get_meta( $post_id = null, $key = '', $default = false ) 
  *
  * @since  1.0.0
  *
- * @param  array  $atts  attributes array to paste
+ * @param  array $atts attributes array to paste.
  * @return string        parsed string
  */
 function cherry_charts_parse_atts( $atts = array() ) {
@@ -73,7 +73,7 @@ function cherry_charts_parse_atts( $atts = array() ) {
  *
  * @since  1.0.0
  *
- * @param  array  $styles  attributes array to paste
+ * @param  array $styles attributes array to paste.
  * @return string        parsed string
  */
 function cherry_charts_parse_css( $styles = array() ) {
@@ -98,8 +98,8 @@ function cherry_charts_parse_css( $styles = array() ) {
  *
  * @since  1.0.0
  *
- * @param  string  $hex      HEX color
- * @param  int     $opacity  opacity (0..100)
+ * @param  string $hex     HEX color.
+ * @param  int    $opacity opacity (0..100).
  * @return string            hex or opacity
  */
 function cherry_charts_maybe_to_rgba( $hex, $opacity ) {
@@ -110,7 +110,7 @@ function cherry_charts_maybe_to_rgba( $hex, $opacity ) {
 
 	$opacity = round( ( $opacity / 100 ), 2 );
 
-	if ( $hex[0] == '#' ) {
+	if ( '#' == $hex[0] ) {
 		$tmp_hex = substr( $hex, 1 );
 	}
 	if ( strlen( $tmp_hex ) == 6 ) {
@@ -133,7 +133,7 @@ function cherry_charts_maybe_to_rgba( $hex, $opacity ) {
  *
  * @since  1.0.0
  *
- * @param  int  $id  chart ID to get cache for
+ * @param  int $id chart ID to get cache for.
  * @return string|bool false
  */
 function cherry_charts_get_cache( $id ) {
@@ -152,8 +152,8 @@ function cherry_charts_get_cache( $id ) {
  *
  * @since  1.0.0
  *
- * @param  int    $id      chart ID to get cache for
- * @param  string $content content to save
+ * @param  int    $id      chart ID to get cache for.
+ * @param  string $content content to save.
  * @return void|bool false
  */
 function cherry_charts_set_cache( $id, $content ) {
@@ -170,7 +170,7 @@ function cherry_charts_set_cache( $id, $content ) {
  *
  * @since  1.0.0
  *
- * @param  int  $id  chart ID to get cache for
+ * @param  int $id chart ID to get cache for.
  * @return void|bool false
  */
 function cherry_charts_delete_cache( $id ) {

@@ -12,12 +12,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // disable direct access
 }
 
-if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
+if ( ! class_exists( 'Cherry_Charts_Shortcode' ) ) {
 
 	/**
 	 * Cherry cahrts shortcode init class
 	 */
-	class cherry_charts_shortcode {
+	class Cherry_Charts_Shortcode {
 
 		/**
 		 * Chart settings array (using only for templating for progress bars)
@@ -27,6 +27,9 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 		 */
 		public $chart_data = array();
 
+		/**
+		 * Constructor for the class. Attach callbacks to related hooks
+		 */
 		function __construct() {
 			add_shortcode( 'charts', array( $this, 'charts_shortcode' ) );
 
@@ -39,7 +42,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 		}
 
 		/**
-		 * regiter template directory for editor
+		 * Regiter template directory for editor
 		 *
 		 * @since  1.0.0
 		 *
@@ -143,7 +146,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 					'custom_class' => array(
 						'default' => '',
 						'name'    => __( 'Class', 'cherry-charts' ),
-						'desc'    => __( 'Extra CSS class', 'cherry-charts' )
+						'desc'    => __( 'Extra CSS class', 'cherry-charts' ),
 					),
 				),
 				'icon'     => 'bar-chart-o', // Custom icon (font-awesome).
@@ -237,8 +240,8 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 		 *
 		 * @since  1.0.0
 		 *
-		 * @param  int    $id       Chart post ID.
-		 * @param  bool   $is_multi is simple or muti progress bar.
+		 * @param  int  $id       Chart post ID.
+		 * @param  bool $is_multi is simple or muti progress bar.
 		 * @return string           chart output
 		 */
 		function chart_progress_bar( $id, $is_multi = false ) {
@@ -343,7 +346,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 				default:
 
 					$bar_style_array = array(
-						'background-color' => $color
+						'background-color' => $color,
 					);
 
 					$bar_style_att = cherry_charts_parse_css( $bar_style_array );
@@ -434,7 +437,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			$tpl = ob_get_contents();
 			ob_end_clean();
 
-			$content = preg_replace_callback( "/%%.+?%%/", array( $this, 'replace_callback' ), $tpl );
+			$content = preg_replace_callback( '/%%.+?%%/', array( $this, 'replace_callback' ), $tpl );
 
 			$this->chart_data = array();
 
@@ -529,7 +532,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 		 * Replace callbaks for template file
 		 *
 		 * @since  1.0.0
-		 * @param  array   $matches replace matches.
+		 * @param  array $matches replace matches.
 		 * @return string           string with replaced data
 		 */
 		function replace_callback( $matches ) {
@@ -544,11 +547,11 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 
 			$key = strtolower( trim( $matches[0], '%%' ) );
 
-			if ( ! isset( $this->chart_data[$key] ) ) {
+			if ( ! isset( $this->chart_data[ $key ] ) ) {
 				return '';
 			}
 
-			return $this->chart_data[$key];
+			return $this->chart_data[ $key ];
 		}
 
 		/**
@@ -596,7 +599,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 
 				if ( 0 == $index ) {
 					foreach ( $value as $row_index => $row_value ) {
-						if ( $row_index == 0 ) {
+						if ( 0 == $row_index ) {
 							continue;
 						}
 						$labels[] = $row_value;
@@ -616,7 +619,6 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 						'data'      => $pass_data,
 					);
 				}
-
 			}
 
 			$prepared_data = json_encode( $prepared_data );
@@ -659,7 +661,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 		 * @since  1.0.0
 		 *
 		 * @param  int    $id Chart post ID.
-		 * @param  string $id Chart type.
+		 * @param  string $type Chart type.
 		 * @return string     Chart output
 		 */
 		function chart_pie( $id, $type ) {
@@ -698,7 +700,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 			foreach ( $data as $index => $value ) {
 				$color = cherry_charts_get_meta( $id, 'item_color_' . ( $index + 1), '' );
 				$color = cherry_charts_maybe_to_rgba( $color, $opacity );
-				$prepared_data[$index] = array(
+				$prepared_data[ $index ] = array(
 					'value' => ! empty( $value[1] ) ? intval( $value[1] ) : 0,
 					'label' => ! empty( $value[0] ) ? $value[0] : '',
 					'color' => $color,
@@ -770,8 +772,7 @@ if ( ! class_exists( 'cherry_charts_shortcode' ) ) {
 
 			return $file;
 		}
-
 	}
 
-	new cherry_charts_shortcode();
+	new Cherry_Charts_Shortcode();
 }

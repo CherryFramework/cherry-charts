@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Init class for charts - register post type etc.
  *
@@ -14,14 +13,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // disable direct access
 }
 
-if ( !class_exists( 'cherry_charts_init' ) ) {
+if ( ! class_exists( 'Cherry_Charts_Init' ) ) {
 
 	/**
-	 * cherry charts init class
+	 * Init custom post type. Enqueue CSS and JS files. Add meta boxes.
 	 *
 	 * @since  1.0.0
 	 */
-	class cherry_charts_init {
+	class Cherry_Charts_Init {
 
 		/**
 		 * Constructor for the class
@@ -107,7 +106,7 @@ if ( !class_exists( 'cherry_charts_init' ) ) {
 		 *
 		 * @since  1.0.0
 		 *
-		 * @param  string  $hook  admin page hook.
+		 * @param  string $hook admin page hook name.
 		 * @return void|null
 		 */
 		function admin_assets( $hook ) {
@@ -123,20 +122,20 @@ if ( !class_exists( 'cherry_charts_init' ) ) {
 
 			$progress_data = array(
 				array( '', __( 'Done', 'cherry-charts' ), __( 'Total', 'cherry-charts' ) ),
-				array( __( 'Value', 'cherry-charts' ), 80, 100 )
+				array( __( 'Value', 'cherry-charts' ), 80, 100 ),
 			);
 			$pie_data = array(
-				array( "Kia", 30 ),
-				array( "Nissan", 20 ),
-				array( "Toyota", 40 ),
-				array( "Honda", 25 ),
+				array( 'Kia', 30 ),
+				array( 'Nissan', 20 ),
+				array( 'Toyota', 40 ),
+				array( 'Honda', 25 ),
 			);
 			$bar_data = array(
-				array( "", "2012", "2013", "2014", "2015" ),
-				array( "Kia", 10, 11, 12, 25 ),
-				array( "Nissan", 20, 15, 14, 15 ),
-				array( "Toyota", 30, 15, 12, 20 ),
-				array( "Honda", 25, 12, 16, 20 ),
+				array( '', '2012', '2013', '2014', '2015' ),
+				array( 'Kia', 10, 11, 12, 25 ),
+				array( 'Nissan', 20, 15, 14, 15 ),
+				array( 'Toyota', 30, 15, 12, 20 ),
+				array( 'Honda', 25, 12, 16, 20 ),
 			);
 
 			$data = array(
@@ -201,8 +200,7 @@ if ( !class_exists( 'cherry_charts_init' ) ) {
 
 			return $handles;
 		}
-
 	}
 
-	new cherry_charts_init();
+	new Cherry_Charts_Init();
 }
