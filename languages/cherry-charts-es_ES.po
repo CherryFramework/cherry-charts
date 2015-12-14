@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cherry-charts\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-30 13:01+0200\n"
-"PO-Revision-Date: 2015-10-30 13:01+0200\n"
+"POT-Creation-Date: 2015-12-14 09:53+0200\n"
+"PO-Revision-Date: 2015-12-14 09:53+0200\n"
 "Last-Translator: J.L.Dokter <jldokter@gmail.com>\n"
 "Language-Team: Cherry Team <support@cherryframework.com>\n"
 "Language: es_ES\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.7.6\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _e;__;_n:1,2;_n_noop:1,2;_x:1,2c;_nx:1,2,4c;"
 "_nx_noop:1,2,3c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;"
@@ -53,197 +53,201 @@ msgid "Progress Bar"
 msgstr "Barra de progreso"
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:184
+msgid "Multi Progress Bar"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:185
 msgid "Pie"
 msgstr "Gráfico redondo"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:185
+#: includes/admin/class-cherry-charts-meta-boxes.php:186
 msgid "Doughnut"
 msgstr "Dónut"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:186
+#: includes/admin/class-cherry-charts-meta-boxes.php:187
 msgid "Bar"
 msgstr "Fila"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:193
+#: includes/admin/class-cherry-charts-meta-boxes.php:194
 msgid "Progress bar type"
 msgstr "Tipo de barra de progreso"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:194
+#: includes/admin/class-cherry-charts-meta-boxes.php:195
 msgid "Select progress bar type"
 msgstr "Seleccione el tipo de barra de progreso"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:197
+#: includes/admin/class-cherry-charts-meta-boxes.php:198
 msgid "Radial"
 msgstr "Radial"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:198
+#: includes/admin/class-cherry-charts-meta-boxes.php:199
 msgid "Horizontal"
 msgstr "Horizontal"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:199
+#: includes/admin/class-cherry-charts-meta-boxes.php:200
 msgid "Vertical"
 msgstr "Vertical"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:207
+#: includes/admin/class-cherry-charts-meta-boxes.php:208
 msgid "Inner cutout percentage"
 msgstr "Porcentaje del recorte interno"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:208
+#: includes/admin/class-cherry-charts-meta-boxes.php:209
 msgid "Set inner cutout percentage (0 - for pie, > 0 for doughnut)"
 msgstr ""
 "Establecer porcentaje del recorte interno (0 - para gráfico redondo, > 0 "
 "para dónut)"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:219
+#: includes/admin/class-cherry-charts-meta-boxes.php:220
 msgid "Width"
 msgstr "Anchura"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:220
+#: includes/admin/class-cherry-charts-meta-boxes.php:221
 msgid "Chart width (for bar chart & non-radial progress bars)"
 msgstr ""
 "Anchura del gráfico (para barra de gráfico & barras de progreso no radiales)"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:230
+#: includes/admin/class-cherry-charts-meta-boxes.php:231
 msgid "Height"
 msgstr "Altura"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:231
+#: includes/admin/class-cherry-charts-meta-boxes.php:232
 msgid "Chart height (for bar chart & non-radial progress bars)"
 msgstr ""
 "Altura del gráfico (para barra de gráfico & barras de progreso no radiales)"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:278
+#: includes/admin/class-cherry-charts-meta-boxes.php:279
 msgid "Progress bar template"
 msgstr "Modelo de barra del progreso"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:279
+#: includes/admin/class-cherry-charts-meta-boxes.php:280
 msgid ""
 "Select progress bar template (this option allowed only for progress bars)"
 msgstr ""
 "Seleccione modelo de la barra del progreso (esta opción se permite sólo para "
 "barras de progreso)"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:287
+#: includes/admin/class-cherry-charts-meta-boxes.php:288
 msgid "Chart Icon"
 msgstr "Icono del gráfico"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:288
+#: includes/admin/class-cherry-charts-meta-boxes.php:289
 msgid "Select chart icon"
 msgstr "Seleccione el icono gráfico"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:296
+#: includes/admin/class-cherry-charts-meta-boxes.php:297
 msgid "Chart Icon size"
 msgstr "Tamaño del icono gráfico"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:297
+#: includes/admin/class-cherry-charts-meta-boxes.php:298
 msgid "Set chart icon size"
 msgstr "Establezca el tamaño del icono gráfico"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:307
+#: includes/admin/class-cherry-charts-meta-boxes.php:308
 msgid "Chart icon color"
 msgstr "Color del icono gráfico"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:315
+#: includes/admin/class-cherry-charts-meta-boxes.php:316
 msgid "Show chart title"
 msgstr "Mostrar título del gráfico"
-
-#: includes/admin/class-cherry-charts-meta-boxes.php:319
-#: includes/admin/class-cherry-charts-meta-boxes.php:331
-#: includes/admin/class-cherry-charts-meta-boxes.php:343
-msgid "Yes"
-msgstr ""
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:320
 #: includes/admin/class-cherry-charts-meta-boxes.php:332
 #: includes/admin/class-cherry-charts-meta-boxes.php:344
-msgid "No"
-msgstr ""
+msgid "Yes"
+msgstr "Sí"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:327
+#: includes/admin/class-cherry-charts-meta-boxes.php:321
+#: includes/admin/class-cherry-charts-meta-boxes.php:333
+#: includes/admin/class-cherry-charts-meta-boxes.php:345
+msgid "No"
+msgstr "¡No!"
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:328
 msgid "Show chart label"
 msgstr "Mostrar label del gráfico"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:339
+#: includes/admin/class-cherry-charts-meta-boxes.php:340
 msgid "Show chart legend"
 msgstr "Mostrar descripción del gráfico"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:436
+#: includes/admin/class-cherry-charts-meta-boxes.php:442
 msgid "Item #1 color"
 msgstr "Elemento #1 color"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:443
+#: includes/admin/class-cherry-charts-meta-boxes.php:449
 msgid "Item #2 color"
 msgstr "Elemento #2 color"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:450
+#: includes/admin/class-cherry-charts-meta-boxes.php:456
 msgid "Item #3 color"
 msgstr "Elemento #3 color"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:457
+#: includes/admin/class-cherry-charts-meta-boxes.php:463
 msgid "Item #4 color"
 msgstr "Elemento #4 color"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:464
+#: includes/admin/class-cherry-charts-meta-boxes.php:470
 msgid "Item #5 color"
 msgstr "Elemento #5 color"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:471
+#: includes/admin/class-cherry-charts-meta-boxes.php:477
 msgid "Item #6 color"
 msgstr "Elemento #6 color"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:478
+#: includes/admin/class-cherry-charts-meta-boxes.php:484
 msgid "Item #7 color"
 msgstr "Elemento #7 color"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:485
+#: includes/admin/class-cherry-charts-meta-boxes.php:491
 msgid "Item #8 color"
 msgstr "Elemento #8 color"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:492
+#: includes/admin/class-cherry-charts-meta-boxes.php:498
 msgid "Item #9 color"
 msgstr "Elemento #9 color"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:499
+#: includes/admin/class-cherry-charts-meta-boxes.php:505
 msgid "Item #10 color"
 msgstr "Elemento #10 color"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:520
+#: includes/admin/class-cherry-charts-meta-boxes.php:526
 msgid "Background color"
 msgstr "Color del fondo"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:527
+#: includes/admin/class-cherry-charts-meta-boxes.php:533
 msgid "Items opacity"
 msgstr "Opacidad del elemento"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:528
+#: includes/admin/class-cherry-charts-meta-boxes.php:534
 msgid "Set items opacity (0 - transparent, 100 - opaque)"
 msgstr "Establezca opacidad de elementos (0 - transparente, 100 - opaco)"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:537
+#: includes/admin/class-cherry-charts-meta-boxes.php:543
 msgid "Background opacity"
 msgstr "Opacidad de fondo"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:538
+#: includes/admin/class-cherry-charts-meta-boxes.php:544
 msgid "Set Background opacity (0 - transparent, 100 - opaque)"
 msgstr "Establecer opacidad del fondo (0 - transparente, 100 - opaco)"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:547
+#: includes/admin/class-cherry-charts-meta-boxes.php:553
 msgid "Chart stroke thickness"
 msgstr "Grosor gráfico "
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:548
+#: includes/admin/class-cherry-charts-meta-boxes.php:554
 msgid "Set chart stroke thickness (0 - without stroke)"
 msgstr "Establecer el grosor gráfico (0 - sin marcador)"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:557
+#: includes/admin/class-cherry-charts-meta-boxes.php:563
 msgid "Chart stroke color"
 msgstr "Color del grosor gráfico"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:564
+#: includes/admin/class-cherry-charts-meta-boxes.php:570
 msgid "Chart stroke opacity"
 msgstr "Opacidad del grosor gráfico"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:565
+#: includes/admin/class-cherry-charts-meta-boxes.php:571
 msgid "Set Chart stroke opacity (0 - transparent, 100 - opaque)"
 msgstr "Establecer opacidad del grosor gráfico (0 - transparente, 100 - opaco)"
 
@@ -538,24 +542,24 @@ msgstr "Clase"
 msgid "Extra CSS class"
 msgstr "Extra clase CSS "
 
-#: includes/class-charts-shortcode.php:178
+#: includes/class-charts-shortcode.php:179
 msgid "Please, provide correct Chart ID"
 msgstr "Por favor, proporcione el ID del Gráfico correcto"
 
-#: includes/class-charts-shortcode.php:194
+#: includes/class-charts-shortcode.php:195
 msgid "Chart does not exist"
 msgstr "Gráfico no existe"
 
-#: includes/class-charts-shortcode.php:249
+#: includes/class-charts-shortcode.php:268
 msgid "Chart data is empty"
 msgstr "Datos de gráficos están vacíos"
 
-#: includes/class-charts-shortcode.php:396
+#: includes/class-charts-shortcode.php:429
 msgid "Template file does not exist"
 msgstr "Archivo de plantilla no existe"
 
-#: includes/class-charts-shortcode.php:472
-#: includes/class-charts-shortcode.php:576
+#: includes/class-charts-shortcode.php:589
+#: includes/class-charts-shortcode.php:693
 msgid "No data to show"
 msgstr "No hay datos para mostrar"
 

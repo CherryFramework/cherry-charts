@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cherry-charts\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-30 13:01+0200\n"
-"PO-Revision-Date: 2015-10-30 13:01+0200\n"
+"POT-Creation-Date: 2015-12-14 09:52+0200\n"
+"PO-Revision-Date: 2015-12-14 09:52+0200\n"
 "Last-Translator: J.L.Dokter <jldokter@gmail.com>\n"
 "Language-Team: Cherry Team <support@cherryframework.com>\n"
 "Language: pl_PL\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.7.6\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _e;__;_n:1,2;_n_noop:1,2;_x:1,2c;_nx:1,2,4c;"
 "_nx_noop:1,2,3c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;"
@@ -22,242 +22,255 @@ msgstr ""
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:68
 msgid "Define chart settings"
-msgstr ""
+msgstr "Zdefiniuj ustawienia wykresu"
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:75
 msgid "Set up content settings"
-msgstr ""
+msgstr "Skonfigurować ustawienia zawartości"
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:82
 msgid "Set up chart data"
-msgstr ""
+msgstr "Konfigurowanie danych wykresu"
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:89
 msgid "Set up chart style"
-msgstr ""
+msgstr "Ustawić styl wykresu"
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:96
 msgid "Shortcode to paste"
-msgstr ""
+msgstr "Shortcode do wklejania"
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:179
 msgid "Chart type"
-msgstr ""
+msgstr "Typ wykresu"
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:180
 msgid "Select chart type"
-msgstr ""
+msgstr "Wybierz typ wykresu"
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:183
 msgid "Progress Bar"
-msgstr ""
+msgstr "Pasek postępu"
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:184
-msgid "Pie"
+msgid "Multi Progress Bar"
 msgstr ""
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:185
-msgid "Doughnut"
-msgstr ""
+msgid "Pie"
+msgstr "Wykres kołowy"
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:186
-msgid "Bar"
-msgstr ""
+msgid "Doughnut"
+msgstr "Wykres pierścieniowy"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:193
-msgid "Progress bar type"
-msgstr ""
+#: includes/admin/class-cherry-charts-meta-boxes.php:187
+msgid "Bar"
+msgstr "Wykres słupkowy"
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:194
-msgid "Select progress bar type"
-msgstr ""
+msgid "Progress bar type"
+msgstr "Typ paska postępu"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:197
-msgid "Radial"
-msgstr ""
+#: includes/admin/class-cherry-charts-meta-boxes.php:195
+msgid "Select progress bar type"
+msgstr "Wybierz typ paska postępu"
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:198
-msgid "Horizontal"
-msgstr ""
+msgid "Radial"
+msgstr "Promieniowo"
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:199
+msgid "Horizontal"
+msgstr "Poziomo"
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:200
 msgid "Vertical"
 msgstr "Pionowo"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:207
-msgid "Inner cutout percentage"
-msgstr ""
-
 #: includes/admin/class-cherry-charts-meta-boxes.php:208
+msgid "Inner cutout percentage"
+msgstr "Procent wewnętrznego wycinka"
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:209
 msgid "Set inner cutout percentage (0 - for pie, > 0 for doughnut)"
 msgstr ""
+"Ustaw procent wewnętrznego wycinka (0 - dla kołowego, > 0 dla "
+"pierścieniowego wykresów)"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:219
+#: includes/admin/class-cherry-charts-meta-boxes.php:220
 msgid "Width"
 msgstr "Szerokość"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:220
+#: includes/admin/class-cherry-charts-meta-boxes.php:221
 msgid "Chart width (for bar chart & non-radial progress bars)"
-msgstr ""
+msgstr "Szerokość wykresu (dla wykresów słupkowego oraz bez-promieniowego)"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:230
+#: includes/admin/class-cherry-charts-meta-boxes.php:231
 msgid "Height"
 msgstr "Wysokość"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:231
+#: includes/admin/class-cherry-charts-meta-boxes.php:232
 msgid "Chart height (for bar chart & non-radial progress bars)"
-msgstr ""
-
-#: includes/admin/class-cherry-charts-meta-boxes.php:278
-msgid "Progress bar template"
-msgstr ""
+msgstr "Wysokość wykresu (dla wykresów słupkowego oraz bez-promieniowego)"
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:279
+msgid "Progress bar template"
+msgstr "Szablon paska postępu"
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:280
 msgid ""
 "Select progress bar template (this option allowed only for progress bars)"
 msgstr ""
-
-#: includes/admin/class-cherry-charts-meta-boxes.php:287
-msgid "Chart Icon"
-msgstr ""
+"Wybierz szablon paska postępu (ta opcja jest możliwa tylko dla pasków "
+"postępu)"
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:288
-msgid "Select chart icon"
-msgstr ""
+msgid "Chart Icon"
+msgstr "Ikona wykresu"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:296
-msgid "Chart Icon size"
-msgstr ""
+#: includes/admin/class-cherry-charts-meta-boxes.php:289
+msgid "Select chart icon"
+msgstr "Wybierz ikonę wykresu"
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:297
+msgid "Chart Icon size"
+msgstr "Rozmiar ikony wykresu"
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:298
 msgid "Set chart icon size"
-msgstr ""
+msgstr "Ustaw rozmiar ikony wykresu"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:307
+#: includes/admin/class-cherry-charts-meta-boxes.php:308
 msgid "Chart icon color"
-msgstr ""
+msgstr "Kolor ikony wykresu"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:315
+#: includes/admin/class-cherry-charts-meta-boxes.php:316
 msgid "Show chart title"
-msgstr ""
-
-#: includes/admin/class-cherry-charts-meta-boxes.php:319
-#: includes/admin/class-cherry-charts-meta-boxes.php:331
-#: includes/admin/class-cherry-charts-meta-boxes.php:343
-msgid "Yes"
-msgstr "Tak"
+msgstr "Pokaż tytuł wykresu"
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:320
 #: includes/admin/class-cherry-charts-meta-boxes.php:332
 #: includes/admin/class-cherry-charts-meta-boxes.php:344
+msgid "Yes"
+msgstr "Tak"
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:321
+#: includes/admin/class-cherry-charts-meta-boxes.php:333
+#: includes/admin/class-cherry-charts-meta-boxes.php:345
 msgid "No"
 msgstr "Nie"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:327
+#: includes/admin/class-cherry-charts-meta-boxes.php:328
 msgid "Show chart label"
-msgstr ""
+msgstr "Pokaż etykietę wykresu"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:339
+#: includes/admin/class-cherry-charts-meta-boxes.php:340
 msgid "Show chart legend"
-msgstr ""
+msgstr "Pokaż legendę wykresu"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:436
+#: includes/admin/class-cherry-charts-meta-boxes.php:442
 msgid "Item #1 color"
-msgstr ""
+msgstr "Kolor elementu #1"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:443
+#: includes/admin/class-cherry-charts-meta-boxes.php:449
 msgid "Item #2 color"
-msgstr ""
+msgstr "Kolor elementu #2"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:450
+#: includes/admin/class-cherry-charts-meta-boxes.php:456
 msgid "Item #3 color"
-msgstr ""
+msgstr "Kolor elementu #3"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:457
+#: includes/admin/class-cherry-charts-meta-boxes.php:463
 msgid "Item #4 color"
-msgstr ""
+msgstr "Kolor elementu #4"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:464
+#: includes/admin/class-cherry-charts-meta-boxes.php:470
 msgid "Item #5 color"
-msgstr ""
+msgstr "Kolor elementu #5"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:471
+#: includes/admin/class-cherry-charts-meta-boxes.php:477
 msgid "Item #6 color"
-msgstr ""
+msgstr "Kolor elementu #6"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:478
+#: includes/admin/class-cherry-charts-meta-boxes.php:484
 msgid "Item #7 color"
-msgstr ""
+msgstr "Kolor elementu #7"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:485
+#: includes/admin/class-cherry-charts-meta-boxes.php:491
 msgid "Item #8 color"
-msgstr ""
+msgstr "Kolor elementu #8"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:492
+#: includes/admin/class-cherry-charts-meta-boxes.php:498
 msgid "Item #9 color"
-msgstr ""
+msgstr "Kolor elementu #9"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:499
+#: includes/admin/class-cherry-charts-meta-boxes.php:505
 msgid "Item #10 color"
-msgstr ""
+msgstr "Kolor elementu #10"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:520
+#: includes/admin/class-cherry-charts-meta-boxes.php:526
 msgid "Background color"
 msgstr "Kolor tła"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:527
+#: includes/admin/class-cherry-charts-meta-boxes.php:533
 msgid "Items opacity"
-msgstr ""
+msgstr "Nieprzezroczystość elementów"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:528
+#: includes/admin/class-cherry-charts-meta-boxes.php:534
 msgid "Set items opacity (0 - transparent, 100 - opaque)"
 msgstr ""
+"Ustaw nieprzezroczystość elementów (0 - przezroczysta, 100 - "
+"nieprzezroczysta)"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:537
+#: includes/admin/class-cherry-charts-meta-boxes.php:543
 msgid "Background opacity"
-msgstr ""
+msgstr "Nieprzezroczystość tła"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:538
+#: includes/admin/class-cherry-charts-meta-boxes.php:544
 msgid "Set Background opacity (0 - transparent, 100 - opaque)"
 msgstr ""
+"Ustaw nieprzezroczystość tła (0 - przezroczyste, 100 - nieprzezroczyste)"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:547
+#: includes/admin/class-cherry-charts-meta-boxes.php:553
 msgid "Chart stroke thickness"
-msgstr ""
+msgstr "Grubość obrysu wykresu"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:548
+#: includes/admin/class-cherry-charts-meta-boxes.php:554
 msgid "Set chart stroke thickness (0 - without stroke)"
-msgstr ""
+msgstr "Ustaw grubość obrysu wykresu (0 - bez obrysu)"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:557
+#: includes/admin/class-cherry-charts-meta-boxes.php:563
 msgid "Chart stroke color"
-msgstr ""
+msgstr "Kolor obrysu wykresu"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:564
+#: includes/admin/class-cherry-charts-meta-boxes.php:570
 msgid "Chart stroke opacity"
-msgstr ""
+msgstr "Nieprzezroczystość obrysu wykresu"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:565
+#: includes/admin/class-cherry-charts-meta-boxes.php:571
 msgid "Set Chart stroke opacity (0 - transparent, 100 - opaque)"
 msgstr ""
+"Ustaw nieprzezroczystość obrysu wykresu (0 - przezroczysty, 100 - "
+"nieprzezroczysty)"
 
 #: includes/admin/class-cherry-interface-builder.php:104
 #: includes/admin/class-cherry-interface-builder.php:545
 #: includes/admin/class-cherry-interface-builder.php:695
 msgid "Choose Image"
-msgstr ""
+msgstr "Wybierz zdjęcie"
 
 #: includes/admin/class-cherry-interface-builder.php:105
 msgid "Remove Image"
-msgstr ""
+msgstr "Usuń zdjęcie"
 
 #: includes/admin/class-cherry-interface-builder.php:115
 msgid "On"
-msgstr ""
+msgstr "Włącz"
 
 #: includes/admin/class-cherry-interface-builder.php:116
 msgid "Off"
-msgstr ""
+msgstr "Wyłącz"
 
 #: includes/admin/class-cherry-interface-builder.php:319
 #: includes/admin/class-cherry-interface-builder.php:345
@@ -267,7 +280,7 @@ msgstr ""
 #: includes/admin/class-cherry-interface-builder.php:781
 #: includes/admin/class-cherry-interface-builder.php:856
 msgid "Step Up"
-msgstr ""
+msgstr "Przyśpiesz"
 
 #: includes/admin/class-cherry-interface-builder.php:319
 #: includes/admin/class-cherry-interface-builder.php:345
@@ -277,148 +290,148 @@ msgstr ""
 #: includes/admin/class-cherry-interface-builder.php:781
 #: includes/admin/class-cherry-interface-builder.php:856
 msgid "Step Down"
-msgstr ""
+msgstr "Zwolnij"
 
 #: includes/admin/class-cherry-interface-builder.php:382
 msgid "Column class(.col-xs-*)"
-msgstr ""
+msgstr "Klasa kolumny (.col-xs-*)"
 
 #: includes/admin/class-cherry-interface-builder.php:392
 msgid "Column class(.col-sm-*)"
-msgstr ""
+msgstr "Klasa kolumny (.col-sm-*)"
 
 #: includes/admin/class-cherry-interface-builder.php:402
 msgid "Column class(.col-md-*)"
-msgstr ""
+msgstr "Klasa kolumny (.col-md-*)"
 
 #: includes/admin/class-cherry-interface-builder.php:412
 msgid "Column class(.col-lg-*)"
-msgstr ""
+msgstr "Klasa kolumny (.col-lg-*)"
 
 #: includes/admin/class-cherry-interface-builder.php:422
 msgid "Custom class"
-msgstr ""
+msgstr "Niestandardowa klasa"
 
 #: includes/admin/class-cherry-interface-builder.php:436
 msgid "Create new static"
-msgstr ""
+msgstr "Utwórz nową statykę"
 
 #: includes/admin/class-cherry-interface-builder.php:437
 msgid "Add new static"
-msgstr ""
+msgstr "Dodaj nową statykę"
 
 #: includes/admin/class-cherry-interface-builder.php:558
 #: includes/admin/class-cherry-interface-builder.php:723
 msgid "Current Image"
-msgstr ""
+msgstr "Aktualne zdjęcie"
 
 #: includes/admin/class-cherry-interface-builder.php:648
 msgid "No repeat"
-msgstr ""
+msgstr "Brak powtórzeń"
 
 #: includes/admin/class-cherry-interface-builder.php:649
 msgid "Repeat All"
-msgstr ""
+msgstr "Powtórz wszystko"
 
 #: includes/admin/class-cherry-interface-builder.php:650
 msgid "Repeat Horizontally"
-msgstr ""
+msgstr "Powtórz poziomo"
 
 #: includes/admin/class-cherry-interface-builder.php:651
 msgid "Repeat Vertically"
-msgstr ""
+msgstr "Powtórz pionowo"
 
 #: includes/admin/class-cherry-interface-builder.php:654
 msgid "Top Left"
-msgstr ""
+msgstr "Góra lewo"
 
 #: includes/admin/class-cherry-interface-builder.php:655
 msgid "Top Center"
-msgstr ""
+msgstr "Góra centrum"
 
 #: includes/admin/class-cherry-interface-builder.php:656
 msgid "Top Right"
-msgstr ""
+msgstr "Góra prawo"
 
 #: includes/admin/class-cherry-interface-builder.php:657
 msgid "Middle Left"
-msgstr ""
+msgstr "Środek lewo"
 
 #: includes/admin/class-cherry-interface-builder.php:658
 msgid "Middle Center"
-msgstr ""
+msgstr "Środek centrum"
 
 #: includes/admin/class-cherry-interface-builder.php:659
 msgid "Middle Right"
-msgstr ""
+msgstr "Środek prawo"
 
 #: includes/admin/class-cherry-interface-builder.php:660
 msgid "Bottom Left"
-msgstr ""
+msgstr "Dół lewo"
 
 #: includes/admin/class-cherry-interface-builder.php:661
 msgid "Bottom Center"
-msgstr ""
+msgstr "Dół centrum"
 
 #: includes/admin/class-cherry-interface-builder.php:662
 msgid "Bottom Right"
-msgstr ""
+msgstr "Dół prawo"
 
 #: includes/admin/class-cherry-interface-builder.php:665
 msgid "Scroll Normally"
-msgstr ""
+msgstr "Przewiń normalnie"
 
 #: includes/admin/class-cherry-interface-builder.php:666
 msgid "Fixed in Place"
-msgstr ""
+msgstr "Zatrzymane w miejscu"
 
 #: includes/admin/class-cherry-interface-builder.php:669
 #: includes/admin/class-cherry-interface-builder.php:679
 msgid "Padding box"
-msgstr ""
+msgstr "Pole dopełnienia"
 
 #: includes/admin/class-cherry-interface-builder.php:670
 #: includes/admin/class-cherry-interface-builder.php:680
 msgid "Border box"
-msgstr ""
+msgstr "Pole brzegu"
 
 #: includes/admin/class-cherry-interface-builder.php:671
 #: includes/admin/class-cherry-interface-builder.php:681
 msgid "Content box"
-msgstr ""
+msgstr "Pole zawartości"
 
 #: includes/admin/class-cherry-interface-builder.php:674
 msgid "Auto Auto"
-msgstr ""
+msgstr "Auto Auto"
 
 #: includes/admin/class-cherry-interface-builder.php:675
 msgid "Cover"
-msgstr ""
+msgstr "Okładka"
 
 #: includes/admin/class-cherry-interface-builder.php:676
 msgid "Contain"
-msgstr ""
+msgstr "Zawierać"
 
 #: includes/admin/class-cherry-interface-builder.php:686
 msgid "Background Color"
-msgstr ""
+msgstr "Kolor tła"
 
 #: includes/admin/class-cherry-interface-builder.php:689
 msgid "Background Image"
-msgstr ""
+msgstr "Obrazek w tle"
 
 #: includes/admin/class-cherry-interface-builder.php:700
 msgid "Background Settings"
-msgstr ""
+msgstr "Ustawienia tła"
 
 #: includes/admin/class-cherry-interface-builder.php:704
 #, php-format
 msgid "Background %s"
-msgstr ""
+msgstr "%s tła"
 
 #: includes/admin/class-cherry-interface-builder.php:760
 msgid "Not defined"
-msgstr ""
+msgstr "Niezdefiniowany"
 
 #: includes/admin/class-cherry-interface-builder.php:761
 msgid "Inherit"
@@ -426,11 +439,11 @@ msgstr "Dziedziczący"
 
 #: includes/admin/class-cherry-interface-builder.php:762
 msgid "Left"
-msgstr "Lewa"
+msgstr "Lewo"
 
 #: includes/admin/class-cherry-interface-builder.php:763
 msgid "Right"
-msgstr "Prawa"
+msgstr "Prawo"
 
 #: includes/admin/class-cherry-interface-builder.php:764
 msgid "Center"
@@ -438,39 +451,39 @@ msgstr "Środek"
 
 #: includes/admin/class-cherry-interface-builder.php:765
 msgid "Justify"
-msgstr ""
+msgstr "Justyfikuj"
 
 #: includes/admin/class-cherry-interface-builder.php:772
 msgid "Font Size"
-msgstr ""
+msgstr "Rozmiar czcionki"
 
 #: includes/admin/class-cherry-interface-builder.php:779
 msgid "Line height"
-msgstr ""
+msgstr "Wysokość linii"
 
 #: includes/admin/class-cherry-interface-builder.php:789
 msgid "Font Family"
-msgstr ""
+msgstr "Rodzina czcionki"
 
 #: includes/admin/class-cherry-interface-builder.php:821
 msgid "Font Style"
-msgstr ""
+msgstr "Styl czcionki"
 
 #: includes/admin/class-cherry-interface-builder.php:832
 msgid "Character Sets"
-msgstr ""
+msgstr "Zestawy znaków"
 
 #: includes/admin/class-cherry-interface-builder.php:845
 msgid "Text align"
-msgstr ""
+msgstr "Wyrównanie tekstu"
 
 #: includes/admin/class-cherry-interface-builder.php:854
 msgid "Letter-spacing"
-msgstr ""
+msgstr "Odległość między literami"
 
 #: includes/admin/class-cherry-interface-builder.php:860
 msgid "Font color"
-msgstr ""
+msgstr "Kolor czcionki"
 
 #: includes/class-charts-shortcode.php:71
 msgid "Title"
@@ -486,43 +499,43 @@ msgstr "Ikona"
 
 #: includes/class-charts-shortcode.php:89
 msgid "Pie icon styles"
-msgstr ""
+msgstr "Kołowy motyw ikon"
 
 #: includes/class-charts-shortcode.php:90
 msgid "Apply this only as style attribute value"
-msgstr ""
+msgstr "Zastosuj jedynie jako wartość atrybutu stylu"
 
 #: includes/class-charts-shortcode.php:96
 msgid "Progress bar (or pie)"
-msgstr ""
+msgstr "Pasek postępu (lub wykres kołowy)"
 
 #: includes/class-charts-shortcode.php:102
 msgid "Progress value"
-msgstr ""
+msgstr "Wartość postępu"
 
 #: includes/class-charts-shortcode.php:108
 #: includes/class-cherry-charts-init.php:123
 msgid "Total"
-msgstr ""
+msgstr "Sumaryczny"
 
 #: includes/class-charts-shortcode.php:114
 msgid "Progress percent"
-msgstr ""
+msgstr "Procent postępu"
 
 #: includes/class-charts-shortcode.php:133
 #: includes/class-cherry-charts-init.php:48
 #: includes/class-cherry-charts-init.php:50
 #: includes/class-cherry-charts-init.php:51
 msgid "Charts"
-msgstr ""
+msgstr "Wykresy"
 
 #: includes/class-charts-shortcode.php:140
 msgid "Chart ID"
-msgstr ""
+msgstr "ID wykresu"
 
 #: includes/class-charts-shortcode.php:141
 msgid "Enter Chart ID to show"
-msgstr ""
+msgstr "Wprowadź ID wykresu w celu wyświetlania"
 
 #: includes/class-charts-shortcode.php:145
 msgid "Class"
@@ -532,75 +545,75 @@ msgstr "Klasa"
 msgid "Extra CSS class"
 msgstr "Dodatkowa klasa CSS"
 
-#: includes/class-charts-shortcode.php:178
+#: includes/class-charts-shortcode.php:179
 msgid "Please, provide correct Chart ID"
-msgstr ""
+msgstr "Należy wprowadzić poprawny ID wykresu"
 
-#: includes/class-charts-shortcode.php:194
+#: includes/class-charts-shortcode.php:195
 msgid "Chart does not exist"
-msgstr ""
+msgstr "Wykres nie istnieje"
 
-#: includes/class-charts-shortcode.php:249
+#: includes/class-charts-shortcode.php:268
 msgid "Chart data is empty"
-msgstr ""
+msgstr "Dane wykresu są niewypełnione"
 
-#: includes/class-charts-shortcode.php:396
+#: includes/class-charts-shortcode.php:429
 msgid "Template file does not exist"
-msgstr ""
+msgstr "Szablon pliku nie istnieje"
 
-#: includes/class-charts-shortcode.php:472
-#: includes/class-charts-shortcode.php:576
+#: includes/class-charts-shortcode.php:589
+#: includes/class-charts-shortcode.php:693
 msgid "No data to show"
-msgstr ""
+msgstr "Brak danych do wyświetlania"
 
 #: includes/class-cherry-charts-init.php:49
 msgid "Chart"
-msgstr ""
+msgstr "Wykres"
 
 #: includes/class-cherry-charts-init.php:52
 #: includes/class-cherry-charts-init.php:53
 msgid "Add New Chart"
-msgstr ""
+msgstr "Dodaj nowy wykres"
 
 #: includes/class-cherry-charts-init.php:54
 msgid "New Chart"
-msgstr ""
+msgstr "Nowy wykres"
 
 #: includes/class-cherry-charts-init.php:55
 msgid "Edit Chart"
-msgstr ""
+msgstr "Edytuj wykres"
 
 #: includes/class-cherry-charts-init.php:56
 msgid "View Chart"
-msgstr ""
+msgstr "Zobacz wykres"
 
 #: includes/class-cherry-charts-init.php:57
 msgid "All Charts"
-msgstr ""
+msgstr "Wszystkie wykresy"
 
 #: includes/class-cherry-charts-init.php:58
 msgid "Search Charts"
-msgstr ""
+msgstr "Szukaj wykresy"
 
 #: includes/class-cherry-charts-init.php:59
 msgid "Parent Charts:"
-msgstr ""
+msgstr "Wykresy nadrzędne:"
 
 #: includes/class-cherry-charts-init.php:60
 msgid "No Charts found."
-msgstr ""
+msgstr "Nie znaleziono wykresów."
 
 #: includes/class-cherry-charts-init.php:61
 msgid "No Charts found in Trash."
-msgstr ""
+msgstr "Nie znaleziono wykresów w Koszu."
 
 #: includes/class-cherry-charts-init.php:123
 msgid "Done"
-msgstr ""
+msgstr "Gotowe"
 
 #: includes/class-cherry-charts-init.php:124
 msgid "Value"
-msgstr ""
+msgstr "Wartość"
 
 #~ msgid "None"
 #~ msgstr "Żaden"

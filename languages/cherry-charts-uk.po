@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cherry-charts\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-30 13:01+0200\n"
-"PO-Revision-Date: 2015-10-30 13:01+0200\n"
+"POT-Creation-Date: 2015-12-14 09:51+0200\n"
+"PO-Revision-Date: 2015-12-14 09:51+0200\n"
 "Last-Translator: J.L.Dokter <jldokter@gmail.com>\n"
 "Language-Team: Cherry Team <support@cherryframework.com>\n"
 "Language: uk\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.7.6\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _e;__;_n:1,2;_n_noop:1,2;_x:1,2c;_nx:1,2,4c;"
 "_nx_noop:1,2,3c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;"
@@ -53,195 +53,199 @@ msgid "Progress Bar"
 msgstr "Смужка поступу"
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:184
+msgid "Multi Progress Bar"
+msgstr ""
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:185
 msgid "Pie"
 msgstr "Кругова діаграма"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:185
+#: includes/admin/class-cherry-charts-meta-boxes.php:186
 msgid "Doughnut"
 msgstr "Кільцева діаграма"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:186
+#: includes/admin/class-cherry-charts-meta-boxes.php:187
 msgid "Bar"
 msgstr "Смужка"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:193
+#: includes/admin/class-cherry-charts-meta-boxes.php:194
 msgid "Progress bar type"
 msgstr "Тип смужки поступу"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:194
+#: includes/admin/class-cherry-charts-meta-boxes.php:195
 msgid "Select progress bar type"
 msgstr "Оберіть тип смужки поступу"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:197
+#: includes/admin/class-cherry-charts-meta-boxes.php:198
 msgid "Radial"
 msgstr "Кругова"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:198
+#: includes/admin/class-cherry-charts-meta-boxes.php:199
 msgid "Horizontal"
 msgstr "Горизонтальна"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:199
+#: includes/admin/class-cherry-charts-meta-boxes.php:200
 msgid "Vertical"
 msgstr "Вертикальна"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:207
+#: includes/admin/class-cherry-charts-meta-boxes.php:208
 msgid "Inner cutout percentage"
 msgstr "Внутрішній виріз у відсотках"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:208
+#: includes/admin/class-cherry-charts-meta-boxes.php:209
 msgid "Set inner cutout percentage (0 - for pie, > 0 for doughnut)"
 msgstr ""
 "Зазначте внутрішній виріз у відсотках (0 - для кругової діаграми, > 0 для "
 "кільця)"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:219
+#: includes/admin/class-cherry-charts-meta-boxes.php:220
 msgid "Width"
 msgstr "Ширина"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:220
+#: includes/admin/class-cherry-charts-meta-boxes.php:221
 msgid "Chart width (for bar chart & non-radial progress bars)"
 msgstr "Ширина діаграми (для смужкової діаграми та некругових смужок поступу)"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:230
+#: includes/admin/class-cherry-charts-meta-boxes.php:231
 msgid "Height"
 msgstr "Висота"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:231
+#: includes/admin/class-cherry-charts-meta-boxes.php:232
 msgid "Chart height (for bar chart & non-radial progress bars)"
 msgstr "Висота діаграми (для смужкової діаграми та некругових смужок поступу)"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:278
+#: includes/admin/class-cherry-charts-meta-boxes.php:279
 msgid "Progress bar template"
 msgstr "Шаблон смужки поступу"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:279
+#: includes/admin/class-cherry-charts-meta-boxes.php:280
 msgid ""
 "Select progress bar template (this option allowed only for progress bars)"
 msgstr ""
 "Вкажіть початкову модель смужки поступу (доступно лише для смужок поступу)"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:287
+#: includes/admin/class-cherry-charts-meta-boxes.php:288
 msgid "Chart Icon"
 msgstr "Іконка діаграми"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:288
+#: includes/admin/class-cherry-charts-meta-boxes.php:289
 msgid "Select chart icon"
 msgstr "Оберіть іконку діаграми"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:296
+#: includes/admin/class-cherry-charts-meta-boxes.php:297
 msgid "Chart Icon size"
 msgstr "Розмір іконки"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:297
+#: includes/admin/class-cherry-charts-meta-boxes.php:298
 msgid "Set chart icon size"
 msgstr "Зазначте розмір іконки"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:307
+#: includes/admin/class-cherry-charts-meta-boxes.php:308
 msgid "Chart icon color"
 msgstr "Колір іконки діаграми"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:315
+#: includes/admin/class-cherry-charts-meta-boxes.php:316
 msgid "Show chart title"
 msgstr "Відображати заголовок діаграми"
-
-#: includes/admin/class-cherry-charts-meta-boxes.php:319
-#: includes/admin/class-cherry-charts-meta-boxes.php:331
-#: includes/admin/class-cherry-charts-meta-boxes.php:343
-msgid "Yes"
-msgstr ""
 
 #: includes/admin/class-cherry-charts-meta-boxes.php:320
 #: includes/admin/class-cherry-charts-meta-boxes.php:332
 #: includes/admin/class-cherry-charts-meta-boxes.php:344
-msgid "No"
-msgstr ""
+msgid "Yes"
+msgstr "Так"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:327
+#: includes/admin/class-cherry-charts-meta-boxes.php:321
+#: includes/admin/class-cherry-charts-meta-boxes.php:333
+#: includes/admin/class-cherry-charts-meta-boxes.php:345
+msgid "No"
+msgstr "Ні"
+
+#: includes/admin/class-cherry-charts-meta-boxes.php:328
 msgid "Show chart label"
 msgstr "Відображати позначку діаграми"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:339
+#: includes/admin/class-cherry-charts-meta-boxes.php:340
 msgid "Show chart legend"
 msgstr "Відображати підпис діаграми"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:436
+#: includes/admin/class-cherry-charts-meta-boxes.php:442
 msgid "Item #1 color"
 msgstr "Колір елемента #1"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:443
+#: includes/admin/class-cherry-charts-meta-boxes.php:449
 msgid "Item #2 color"
 msgstr "Колір елемента #2"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:450
+#: includes/admin/class-cherry-charts-meta-boxes.php:456
 msgid "Item #3 color"
 msgstr "Колір елемента #3"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:457
+#: includes/admin/class-cherry-charts-meta-boxes.php:463
 msgid "Item #4 color"
 msgstr "Колір елемента #4"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:464
+#: includes/admin/class-cherry-charts-meta-boxes.php:470
 msgid "Item #5 color"
 msgstr "Колір елемента #5"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:471
+#: includes/admin/class-cherry-charts-meta-boxes.php:477
 msgid "Item #6 color"
 msgstr "Колір елемента #6"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:478
+#: includes/admin/class-cherry-charts-meta-boxes.php:484
 msgid "Item #7 color"
 msgstr "Колір елемента #7"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:485
+#: includes/admin/class-cherry-charts-meta-boxes.php:491
 msgid "Item #8 color"
 msgstr "Колір елемента #8"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:492
+#: includes/admin/class-cherry-charts-meta-boxes.php:498
 msgid "Item #9 color"
 msgstr "Колір елемента #9"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:499
+#: includes/admin/class-cherry-charts-meta-boxes.php:505
 msgid "Item #10 color"
 msgstr "Колір елемента #10"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:520
+#: includes/admin/class-cherry-charts-meta-boxes.php:526
 msgid "Background color"
 msgstr "Колір тла"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:527
+#: includes/admin/class-cherry-charts-meta-boxes.php:533
 msgid "Items opacity"
 msgstr "Прозорість елементів"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:528
+#: includes/admin/class-cherry-charts-meta-boxes.php:534
 msgid "Set items opacity (0 - transparent, 100 - opaque)"
 msgstr ""
 "Зазначте рівень прозорості елементів (0 - цілком прозорий, 100 - видимий)"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:537
+#: includes/admin/class-cherry-charts-meta-boxes.php:543
 msgid "Background opacity"
 msgstr "Прозорість тла"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:538
+#: includes/admin/class-cherry-charts-meta-boxes.php:544
 msgid "Set Background opacity (0 - transparent, 100 - opaque)"
 msgstr "Зазначте рівень прозорості тла (0 - цілком прозоре, 100 - видиме)"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:547
+#: includes/admin/class-cherry-charts-meta-boxes.php:553
 msgid "Chart stroke thickness"
 msgstr "Товщина обведення діаграми"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:548
+#: includes/admin/class-cherry-charts-meta-boxes.php:554
 msgid "Set chart stroke thickness (0 - without stroke)"
 msgstr "Вкажіть товщину обведення діаграми (0 - без обведення)"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:557
+#: includes/admin/class-cherry-charts-meta-boxes.php:563
 msgid "Chart stroke color"
 msgstr "Колір обведення діаграми"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:564
+#: includes/admin/class-cherry-charts-meta-boxes.php:570
 msgid "Chart stroke opacity"
 msgstr "Прозорість обведення діаграми"
 
-#: includes/admin/class-cherry-charts-meta-boxes.php:565
+#: includes/admin/class-cherry-charts-meta-boxes.php:571
 msgid "Set Chart stroke opacity (0 - transparent, 100 - opaque)"
 msgstr ""
 "Встановіть прозорість обведення діаграми (0 - прозорий, 100 - непрозорий)"
@@ -537,24 +541,24 @@ msgstr "Клас"
 msgid "Extra CSS class"
 msgstr "Користувацький клас CSS"
 
-#: includes/class-charts-shortcode.php:178
+#: includes/class-charts-shortcode.php:179
 msgid "Please, provide correct Chart ID"
 msgstr "Будь ласка, Вкажіть правильний ID діаграми"
 
-#: includes/class-charts-shortcode.php:194
+#: includes/class-charts-shortcode.php:195
 msgid "Chart does not exist"
 msgstr "Діаграми немає"
 
-#: includes/class-charts-shortcode.php:249
+#: includes/class-charts-shortcode.php:268
 msgid "Chart data is empty"
 msgstr "Дані діаграми відсутні"
 
-#: includes/class-charts-shortcode.php:396
+#: includes/class-charts-shortcode.php:429
 msgid "Template file does not exist"
 msgstr "Немає файлу шаблона"
 
-#: includes/class-charts-shortcode.php:472
-#: includes/class-charts-shortcode.php:576
+#: includes/class-charts-shortcode.php:589
+#: includes/class-charts-shortcode.php:693
 msgid "No data to show"
 msgstr "Дані для відображення відсутні"
 
